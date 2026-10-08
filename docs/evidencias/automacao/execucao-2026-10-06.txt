@@ -1,0 +1,577 @@
+﻿
+> verzel-store-qa-vzs-142@1.0.0 test
+> playwright test --project=api
+
+
+Running 102 tests using 2 workers
+
+  ✓    1 [api] › tests\api\pedidos.spec.ts:15:7 › Pedidos (POST /api/pedidos) › CT-PED-01 | pedido válido com cupom: 201, número VZ-NNNNNN, CEP normalizado e valores do exemplo da doc (78ms)
+  ✓    2 [api] › tests\api\calculo.spec.ts:17:7 › Cupom de desconto › CT-CUP-01 | exemplo da documentação: P002 + 2×P004 com BEMVINDO10 (10% de 239,70) (89ms)
+  ✓    4 [api] › tests\api\calculo.spec.ts:30:9 › Cupom de desconto › CT-CUP-02 | código "bemvindo10" é aceito (sem distinção de maiúsculas e com trim) (52ms)
+  ✓    5 [api] › tests\api\calculo.spec.ts:30:9 › Cupom de desconto › CT-CUP-02 | código "BemVindo10" é aceito (sem distinção de maiúsculas e com trim) (49ms)
+  ✓    6 [api] › tests\api\calculo.spec.ts:30:9 › Cupom de desconto › CT-CUP-02 | código " BEMVINDO10" é aceito (sem distinção de maiúsculas e com trim) (50ms)
+  ✓    7 [api] › tests\api\calculo.spec.ts:30:9 › Cupom de desconto › CT-CUP-02 | código "BEMVINDO10 " é aceito (sem distinção de maiúsculas e com trim) (76ms)
+  ✓    8 [api] › tests\api\calculo.spec.ts:30:9 › Cupom de desconto › CT-CUP-02 | código "   bemvindo10   " é aceito (sem distinção de maiúsculas e com trim) (40ms)
+  ✓    9 [api] › tests\api\calculo.spec.ts:40:9 › Cupom de desconto › CT-CUP-03 | cupom inexistente "XPTO": 200, "Cupom inválido." e sem desconto (44ms)
+  ✓    3 [api] › tests\api\pedidos.spec.ts:27:7 › Pedidos (POST /api/pedidos) › CT-PED-01 | pedido válido sem cupom e com frete grátis (411ms)
+  ✓   10 [api] › tests\api\calculo.spec.ts:40:9 › Cupom de desconto › CT-CUP-03 | cupom inexistente "BEMVINDO11": 200, "Cupom inválido." e sem desconto (49ms)
+  ✓   12 [api] › tests\api\calculo.spec.ts:40:9 › Cupom de desconto › CT-CUP-03 | cupom inexistente "BEMVINDO 10": 200, "Cupom inválido." e sem desconto (392ms)
+  ✓   13 [api] › tests\api\calculo.spec.ts:40:9 › Cupom de desconto › CT-CUP-03 | cupom inexistente "BEMVINDO100": 200, "Cupom inválido." e sem desconto (52ms)
+  ✓   11 [api] › tests\api\pedidos.spec.ts:41:9 › Pedidos (POST /api/pedidos) › CT-PED-02 | totais do pedido = totais do cálculo (P002 + 2×P004 com cupom) (552ms)
+  ✓   15 [api] › tests\api\pedidos.spec.ts:41:9 › Pedidos (POST /api/pedidos) › CT-PED-02 | totais do pedido = totais do cálculo (2×P005 com cupom (limite do frete grátis)) (53ms)
+  ✓   16 [api] › tests\api\pedidos.spec.ts:41:9 › Pedidos (POST /api/pedidos) › CT-PED-02 | totais do pedido = totais do cálculo (3×P001 sem cupom) (74ms)
+  ✓   17 [api] › tests\api\pedidos.spec.ts:57:7 › Pedidos (POST /api/pedidos) › CT-PED-02 | cupom em minúsculas e com espaços também é aceito no pedido (CA02) (45ms)
+  ✓   14 [api] › tests\api\calculo.spec.ts:51:9 › Cupom de desconto › CT-CUP-04 | cupom expirado "VERAO2026": 200, "Cupom expirado." e sem desconto (409ms)
+  ✓   18 [api] › tests\api\pedidos.spec.ts:67:9 › Pedidos (POST /api/pedidos) › CT-PED-03 | nome sem sobrenome "Maria" → 422 DADOS_INVALIDOS (386ms)
+  ✓   19 [api] › tests\api\calculo.spec.ts:51:9 › Cupom de desconto › CT-CUP-04 | cupom expirado "verao2026": 200, "Cupom expirado." e sem desconto (408ms)
+  ✓   21 [api] › tests\api\calculo.spec.ts:51:9 › Cupom de desconto › CT-CUP-04 | cupom expirado " VERAO2026 ": 200, "Cupom expirado." e sem desconto (37ms)
+  ✓   22 [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-01 | subtotal 100,00 (< 200): frete 19,90 e faltam 100,00 (59ms)
+  ✓   23 [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-03 | subtotal 199,90 (R$ 0,10 abaixo do limite): frete cobrado e faltam 0,10 (55ms)
+  ✓   20 [api] › tests\api\pedidos.spec.ts:67:9 › Pedidos (POST /api/pedidos) › CT-PED-03 | nome sem sobrenome "" → 422 DADOS_INVALIDOS (403ms)
+  ✓   24 [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-03 | subtotal 199,80 (P001 + P002): frete cobrado e faltam 0,20 (405ms)
+  ✓   25 [api] › tests\api\pedidos.spec.ts:74:9 › Pedidos (POST /api/pedidos) › CT-PED-04 | e-mail inválido "maria" → 422 DADOS_INVALIDOS (406ms)
+  ✘   26 [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-02 | subtotal exatamente 200,00 (2×P005): limite inclusivo, frete grátis (76ms)
+  ✓   27 [api] › tests\api\pedidos.spec.ts:74:9 › Pedidos (POST /api/pedidos) › CT-PED-04 | e-mail inválido "maria@" → 422 DADOS_INVALIDOS (47ms)
+  ✓   28 [api] › tests\api\pedidos.spec.ts:74:9 › Pedidos (POST /api/pedidos) › CT-PED-04 | e-mail inválido "@exemplo.com" → 422 DADOS_INVALIDOS (48ms)
+  ✓   29 [api] › tests\api\pedidos.spec.ts:74:9 › Pedidos (POST /api/pedidos) › CT-PED-04 | e-mail inválido "maria.exemplo.com" → 422 DADOS_INVALIDOS (39ms)
+  ✘   31 [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-02 | subtotal exatamente 200,00 por outra combinação (4×P008) (101ms)
+  ✓   30 [api] › tests\api\pedidos.spec.ts:74:9 › Pedidos (POST /api/pedidos) › CT-PED-04 | e-mail inválido "maria@@exemplo.com" → 422 DADOS_INVALIDOS (413ms)
+  ✓   33 [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-04 | subtotal 229,90 (> 200): frete grátis e faltante 0 (nunca negativo) (70ms)
+  ✓   32 [api] › tests\api\pedidos.spec.ts:74:9 › Pedidos (POST /api/pedidos) › CT-PED-04 | e-mail inválido "" → 422 DADOS_INVALIDOS (424ms)
+  ✓   35 [api] › tests\api\pedidos.spec.ts:81:9 › Pedidos (POST /api/pedidos) › CT-PED-05 | CEP "01310-100" (8 dígitos, com/sem hífen) é aceito e normalizado para 01310100 (43ms)
+  ✓   36 [api] › tests\api\pedidos.spec.ts:81:9 › Pedidos (POST /api/pedidos) › CT-PED-05 | CEP "01310100" (8 dígitos, com/sem hífen) é aceito e normalizado para 01310100 (32ms)
+  ✓   37 [api] › tests\api\pedidos.spec.ts:89:9 › Pedidos (POST /api/pedidos) › CT-PED-06 | CEP inválido "1234567" → 422 DADOS_INVALIDOS (42ms)
+  ✘   34 [api] › tests\api\calculo.spec.ts:113:7 › Frete grátis › CT-FRE-05 | CA08: subtotal 200,00 com cupom (desconto 20,00) continua com frete grátis (409ms)
+  ✓   38 [api] › tests\api\pedidos.spec.ts:89:9 › Pedidos (POST /api/pedidos) › CT-PED-06 | CEP inválido "123456789" → 422 DADOS_INVALIDOS (417ms)
+  ✓   39 [api] › tests\api\pedidos.spec.ts:89:9 › Pedidos (POST /api/pedidos) › CT-PED-06 | CEP inválido "01310-10" → 422 DADOS_INVALIDOS (36ms)
+  ✓   41 [api] › tests\api\calculo.spec.ts:119:7 › Frete grátis › CT-FRE-05 | CA08: subtotal 219,80 com cupom (total < 200) continua com frete grátis (68ms)
+  ✓   42 [api] › tests\api\calculo.spec.ts:125:7 › Frete grátis › CT-FRE-05 | CA08: subtotal 199,90 com cupom NÃO ganha frete grátis; faltante usa o subtotal (0,10) (42ms)
+  ✓   43 [api] › tests\api\calculo.spec.ts:131:7 › Frete grátis › CT-FRE-06 | CA09: desconto de 10% incide só nos produtos (10,00 e não 11,99), exemplo da doc de /pedidos (49ms)
+  ✓   44 [api] › tests\api\calculo.spec.ts:142:7 › Quantidade máxima por produto (casos permitidos) › CT-QTD-01 | 5 unidades do mesmo produto são aceitas (limite inclusivo) (41ms)
+  ✓   45 [api] › tests\api\calculo.spec.ts:150:7 › Quantidade máxima por produto (casos permitidos) › CT-QTD-01 | 5×P001 com cupom (50ms)
+  ✓   46 [api] › tests\api\calculo.spec.ts:156:7 › Quantidade máxima por produto (casos permitidos) › CT-QTD-03 | o limite é por produto: os 8 produtos com 5 unidades cada são aceitos (62ms)
+  ✓   40 [api] › tests\api\pedidos.spec.ts:89:9 › Pedidos (POST /api/pedidos) › CT-PED-06 | CEP inválido "ABCDE-FGH" → 422 DADOS_INVALIDOS (413ms)
+  ✓   48 [api] › tests\api\pedidos.spec.ts:89:9 › Pedidos (POST /api/pedidos) › CT-PED-06 | CEP inválido "" → 422 DADOS_INVALIDOS (39ms)
+  ✓   47 [api] › tests\api\calculo.spec.ts:171:7 › Cálculo e arredondamento › CT-CAL-02 | 3×P001 sem cupom: valores com 2 casas, sem artefato de ponto flutuante (416ms)
+  ✓   49 [api] › tests\api\pedidos.spec.ts:96:7 › Pedidos (POST /api/pedidos) › CT-PED-07 | cupom inexistente no pedido → 422 CUPOM_INVALIDO (diferente de /calcular, que responde 200) (413ms)
+  ✓   50 [api] › tests\api\calculo.spec.ts:177:7 › Cálculo e arredondamento › CT-CAL-02 | 3×P001 com cupom: desconto 17,97 e total 181,63 (51ms)
+  ✓   51 [api] › tests\api\pedidos.spec.ts:101:7 › Pedidos (POST /api/pedidos) › CT-PED-08 | cupom expirado no pedido → 422 CUPOM_EXPIRADO (66ms)
+  ✓   53 [api] › tests\api\pedidos.spec.ts:106:7 › Pedidos (POST /api/pedidos) › CT-PED-08 | cupom expirado em minúsculas no pedido → 422 CUPOM_EXPIRADO (CA02 + CA04) (46ms)
+  ✓   54 [api] › tests\api\produtos.spec.ts:5:7 › Catálogo de produtos (GET /api/produtos) › CT-API-01 | lista os 8 produtos com id, nome, descricao, categoria e preco (395ms)
+  ✓   55 [api] › tests\api\produtos.spec.ts:22:9 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P001 retorna 200 com o produto (41ms)
+  ✓   56 [api] › tests\api\produtos.spec.ts:22:9 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P002 retorna 200 com o produto (50ms)
+  ✓   57 [api] › tests\api\produtos.spec.ts:22:9 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P003 retorna 200 com o produto (38ms)
+  ✓   58 [api] › tests\api\produtos.spec.ts:22:9 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P004 retorna 200 com o produto (39ms)
+  ✓   59 [api] › tests\api\produtos.spec.ts:22:9 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P005 retorna 200 com o produto (386ms)
+  ✓   60 [api] › tests\api\produtos.spec.ts:22:9 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P006 retorna 200 com o produto (55ms)
+  ✓   61 [api] › tests\api\produtos.spec.ts:22:9 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P007 retorna 200 com o produto (374ms)
+  ✓   62 [api] › tests\api\produtos.spec.ts:22:9 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P008 retorna 200 com o produto (377ms)
+  ✓   63 [api] › tests\api\produtos.spec.ts:32:7 › Catálogo de produtos (GET /api/produtos) › CT-API-02 | GET /api/produtos/P999 retorna 404 PRODUTO_NAO_ENCONTRADO (401ms)
+  ✘   64 [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 6 unidades do mesmo produto (CA10: vale para a API) (61ms)
+  ✘   52 [api] › tests\api\calculo.spec.ts:194:7 › Cálculo e arredondamento › CT-CAL-01 | invariantes (fórmula do total, regra do frete, faltante, soma dos itens, 2 casas) em vários carrinhos, com e sem cupom (2.5s)
+  ✘   65 [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 10 unidades do mesmo produto (CA10: vale para a API) (350ms)
+  ✓   66 [api] › tests\api\calculo.spec.ts:204:7 › Cálculo e arredondamento › CT-CAL-05 | o cálculo é determinístico e sem estado: a mesma entrada repetida dá a mesma saída (270ms)
+  ✘   67 [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 100 unidades do mesmo produto (CA10: vale para a API) (75ms)
+  ✘   68 [api] › tests\api\validacao.spec.ts:14:7 › Quantidade: regras de rejeição › CT-QTD-05 | /pedidos rejeita 6 unidades do mesmo produto (71ms)
+  ✘   69 [api] › tests\api\validacao.spec.ts:19:7 › Quantidade: regras de rejeição › CT-QTD-05 | basta um item acima do limite para rejeitar o carrinho todo (83ms)
+  ✓   70 [api] › tests\api\validacao.spec.ts:24:9 › Quantidade: regras de rejeição › CT-QTD-06 | quantidade 0 é rejeitada com QUANTIDADE_INVALIDA (63ms)
+  ✓   71 [api] › tests\api\validacao.spec.ts:24:9 › Quantidade: regras de rejeição › CT-QTD-06 | quantidade -1 é rejeitada com QUANTIDADE_INVALIDA (45ms)
+  ✓   72 [api] › tests\api\validacao.spec.ts:24:9 › Quantidade: regras de rejeição › CT-QTD-06 | quantidade 1.5 é rejeitada com QUANTIDADE_INVALIDA (48ms)
+  ✓   73 [api] › tests\api\validacao.spec.ts:29:7 › Quantidade: regras de rejeição › CT-API-09 | formato do erro: codigo, mensagem e campo (exemplo da documentação) (3.8s)
+  ✓   74 [api] › tests\api\validacao.spec.ts:35:7 › Quantidade: regras de rejeição › CT-API-09 | o campo do erro aponta o índice correto do item (itens[1].quantidade) (424ms)
+  ✓   75 [api] › tests\api\validacao.spec.ts:40:7 › Quantidade: regras de rejeição › CT-QTD-07 | o mesmo produto duas vezes na lista é rejeitado com ITEM_DUPLICADO (43ms)
+  ✓   76 [api] › tests\api\validacao.spec.ts:51:11 › Estrutura da requisição › CT-API-05 | /api/carrinho/calcular com JSON malformado "{" → 400 JSON_INVALIDO (62ms)
+  ✓   77 [api] › tests\api\validacao.spec.ts:51:11 › Estrutura da requisição › CT-API-05 | /api/carrinho/calcular com JSON malformado "{\"itens\": [" → 400 JSON_INVALIDO (404ms)
+  ✓   78 [api] › tests\api\validacao.spec.ts:51:11 › Estrutura da requisição › CT-API-05 | /api/carrinho/calcular com JSON malformado "isto não é json" → 400 JSON_INVALIDO (385ms)
+  ✓   79 [api] › tests\api\validacao.spec.ts:56:11 › Estrutura da requisição › CT-API-05 | /api/carrinho/calcular com corpo que não é um objeto JSON [] → 400 JSON_INVALIDO (48ms)
+  ✓   80 [api] › tests\api\validacao.spec.ts:56:11 › Estrutura da requisição › CT-API-05 | /api/carrinho/calcular com corpo que não é um objeto JSON null → 400 JSON_INVALIDO (84ms)
+  ✓   81 [api] › tests\api\validacao.spec.ts:56:11 › Estrutura da requisição › CT-API-05 | /api/carrinho/calcular com corpo que não é um objeto JSON 123 → 400 JSON_INVALIDO (40ms)
+  ✓   82 [api] › tests\api\validacao.spec.ts:56:11 › Estrutura da requisição › CT-API-05 | /api/carrinho/calcular com corpo que não é um objeto JSON "texto" → 400 JSON_INVALIDO (38ms)
+  ✓   83 [api] › tests\api\validacao.spec.ts:51:11 › Estrutura da requisição › CT-API-05 | /api/pedidos com JSON malformado "{" → 400 JSON_INVALIDO (430ms)
+  ✓   84 [api] › tests\api\validacao.spec.ts:51:11 › Estrutura da requisição › CT-API-05 | /api/pedidos com JSON malformado "{\"itens\": [" → 400 JSON_INVALIDO (407ms)
+  ✓   85 [api] › tests\api\validacao.spec.ts:51:11 › Estrutura da requisição › CT-API-05 | /api/pedidos com JSON malformado "isto não é json" → 400 JSON_INVALIDO (37ms)
+  ✓   86 [api] › tests\api\validacao.spec.ts:56:11 › Estrutura da requisição › CT-API-05 | /api/pedidos com corpo que não é um objeto JSON [] → 400 JSON_INVALIDO (48ms)
+  ✓   87 [api] › tests\api\validacao.spec.ts:56:11 › Estrutura da requisição › CT-API-05 | /api/pedidos com corpo que não é um objeto JSON null → 400 JSON_INVALIDO (41ms)
+  ✓   88 [api] › tests\api\validacao.spec.ts:56:11 › Estrutura da requisição › CT-API-05 | /api/pedidos com corpo que não é um objeto JSON 123 → 400 JSON_INVALIDO (38ms)
+  ✓   89 [api] › tests\api\validacao.spec.ts:56:11 › Estrutura da requisição › CT-API-05 | /api/pedidos com corpo que não é um objeto JSON "texto" → 400 JSON_INVALIDO (374ms)
+  ✓   90 [api] › tests\api\validacao.spec.ts:62:7 › Estrutura da requisição › CT-API-06 | /calcular sem a chave itens → 422 ITENS_OBRIGATORIOS (54ms)
+  ✓   91 [api] › tests\api\validacao.spec.ts:66:7 › Estrutura da requisição › CT-API-06 | /calcular com itens vazio → 422 ITENS_OBRIGATORIOS (36ms)
+  ✓   92 [api] › tests\api\validacao.spec.ts:70:7 › Estrutura da requisição › CT-PED-09 | /pedidos com itens vazio → 422 ITENS_OBRIGATORIOS (44ms)
+  ✓   93 [api] › tests\api\validacao.spec.ts:75:9 › Estrutura da requisição › CT-API-07 | item que não é objeto ("P001") → 422 ITEM_INVALIDO (48ms)
+  ✓   94 [api] › tests\api\validacao.spec.ts:75:9 › Estrutura da requisição › CT-API-07 | item que não é objeto (42) → 422 ITEM_INVALIDO (45ms)
+  ✓   95 [api] › tests\api\validacao.spec.ts:80:7 › Estrutura da requisição › CT-API-08 | produto inexistente no item → 422 PRODUTO_NAO_ENCONTRADO (49ms)
+  ✓   96 [api] › tests\api\validacao.spec.ts:89:7 › Rotas e métodos HTTP › CT-API-03 | GET em rota inexistente → 404 ROTA_NAO_ENCONTRADA (56ms)
+  ✓   97 [api] › tests\api\validacao.spec.ts:93:7 › Rotas e métodos HTTP › CT-API-03 | POST em rota inexistente → 404 ROTA_NAO_ENCONTRADA (375ms)
+  ✓   98 [api] › tests\api\validacao.spec.ts:105:9 › Rotas e métodos HTTP › CT-API-04 | GET /api/carrinho/calcular → 405 METODO_NAO_PERMITIDO (40ms)
+  ✓   99 [api] › tests\api\validacao.spec.ts:105:9 › Rotas e métodos HTTP › CT-API-04 | GET /api/pedidos → 405 METODO_NAO_PERMITIDO (375ms)
+  ✓  100 [api] › tests\api\validacao.spec.ts:105:9 › Rotas e métodos HTTP › CT-API-04 | PUT /api/pedidos → 405 METODO_NAO_PERMITIDO (74ms)
+  ✓  101 [api] › tests\api\validacao.spec.ts:105:9 › Rotas e métodos HTTP › CT-API-04 | DELETE /api/produtos → 405 METODO_NAO_PERMITIDO (37ms)
+  ✓  102 [api] › tests\api\validacao.spec.ts:105:9 › Rotas e métodos HTTP › CT-API-04 | POST /api/produtos → 405 METODO_NAO_PERMITIDO (52ms)
+
+
+  1) [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-02 | subtotal exatamente 200,00 (2×P005): limite inclusivo, frete grátis 
+
+    Error: frete
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 19.9
+
+       at api\support.ts:69
+
+      67 |   expect.soft(corpo.subtotal, `${p}subtotal`).toBe(esperado.subtotal);
+      68 |   expect.soft(corpo.desconto, `${p}desconto`).toBe(esperado.desconto);
+    > 69 |   expect.soft(corpo.frete, `${p}frete`).toBe(esperado.frete);
+         |                                         ^
+      70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+      72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:69:41)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:109:19
+
+    Error: freteGratis
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at api\support.ts:70
+
+      68 |   expect.soft(corpo.desconto, `${p}desconto`).toBe(esperado.desconto);
+      69 |   expect.soft(corpo.frete, `${p}frete`).toBe(esperado.frete);
+    > 70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+         |                                                     ^
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+      72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+      73 | }
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:70:53)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:109:19
+
+    Error: total
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 219.9
+
+       at api\support.ts:72
+
+      70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+    > 72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+         |                                         ^
+      73 | }
+      74 |
+      75 | const centavos = (n: number): number => Math.round(n * 100);
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:72:41)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:109:19
+
+    Error Context: test-results\api-calculo-Frete-grátis-C-49f12-mite-inclusivo-frete-grátis-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-calculo-Frete-grátis-C-49f12-mite-inclusivo-frete-grátis-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-calculo-Frete-grátis-C-49f12-mite-inclusivo-frete-grátis-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-02 | subtotal exatamente 200,00 por outra combinação (4×P008) 
+
+    Error: frete
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 19.9
+
+       at api\support.ts:69
+
+      67 |   expect.soft(corpo.subtotal, `${p}subtotal`).toBe(esperado.subtotal);
+      68 |   expect.soft(corpo.desconto, `${p}desconto`).toBe(esperado.desconto);
+    > 69 |   expect.soft(corpo.frete, `${p}frete`).toBe(esperado.frete);
+         |                                         ^
+      70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+      72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:69:41)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:109:19
+
+    Error: freteGratis
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at api\support.ts:70
+
+      68 |   expect.soft(corpo.desconto, `${p}desconto`).toBe(esperado.desconto);
+      69 |   expect.soft(corpo.frete, `${p}frete`).toBe(esperado.frete);
+    > 70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+         |                                                     ^
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+      72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+      73 | }
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:70:53)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:109:19
+
+    Error: total
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 219.9
+
+       at api\support.ts:72
+
+      70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+    > 72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+         |                                         ^
+      73 | }
+      74 |
+      75 | const centavos = (n: number): number => Math.round(n * 100);
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:72:41)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:109:19
+
+    Error Context: test-results\api-calculo-Frete-grátis-C-95ad0-or-outra-combinação-4×P008--api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-calculo-Frete-grátis-C-95ad0-or-outra-combinação-4×P008--api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-calculo-Frete-grátis-C-95ad0-or-outra-combinação-4×P008--api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [api] › tests\api\calculo.spec.ts:113:7 › Frete grátis › CT-FRE-05 | CA08: subtotal 200,00 com cupom (desconto 20,00) continua com frete grátis 
+
+    Error: frete
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 19.9
+
+       at api\support.ts:69
+
+      67 |   expect.soft(corpo.subtotal, `${p}subtotal`).toBe(esperado.subtotal);
+      68 |   expect.soft(corpo.desconto, `${p}desconto`).toBe(esperado.desconto);
+    > 69 |   expect.soft(corpo.frete, `${p}frete`).toBe(esperado.frete);
+         |                                         ^
+      70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+      72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:69:41)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:116:17
+
+    Error: freteGratis
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at api\support.ts:70
+
+      68 |   expect.soft(corpo.desconto, `${p}desconto`).toBe(esperado.desconto);
+      69 |   expect.soft(corpo.frete, `${p}frete`).toBe(esperado.frete);
+    > 70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+         |                                                     ^
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+      72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+      73 | }
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:70:53)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:116:17
+
+    Error: total
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 180
+    Received: 199.9
+
+       at api\support.ts:72
+
+      70 |   expect.soft(corpo.freteGratis, `${p}freteGratis`).toBe(esperado.freteGratis);
+      71 |   expect.soft(corpo.valorFaltanteFreteGratis, `${p}valorFaltanteFreteGratis`).toBe(esperado.valorFaltanteFreteGratis);
+    > 72 |   expect.soft(corpo.total, `${p}total`).toBe(esperado.total);
+         |                                         ^
+      73 | }
+      74 |
+      75 | const centavos = (n: number): number => Math.round(n * 100);
+        at expectResumo (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:72:41)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:116:17
+
+    Error Context: test-results\api-calculo-Frete-grátis-C-cbfe5-0-continua-com-frete-grátis-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-calculo-Frete-grátis-C-cbfe5-0-continua-com-frete-grátis-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-calculo-Frete-grátis-C-cbfe5-0-continua-com-frete-grátis-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [api] › tests\api\calculo.spec.ts:194:7 › Cálculo e arredondamento › CT-CAL-01 | invariantes (fórmula do total, regra do frete, faltante, soma dos itens, 2 casas) em vários carrinhos, com e sem cupom 
+
+    Error: 2×P005 (sem cupom): freteGratis (subtotal >= 200,00)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at api\support.ts:96
+
+      94 |   expect.soft(centavos(corpo.total), `${rotulo}: total = subtotal - desconto + frete`).toBe(centavos(corpo.subtotal) - centavos(corpo.desconto) + centavos(corpo.frete));
+      95 |   const gratis = centavos(corpo.subtotal) >= 20000;
+    > 96 |   expect.soft(corpo.freteGratis, `${rotulo}: freteGratis (subtotal >= 200,00)`).toBe(gratis);
+         |                                                                                 ^
+      97 |   expect.soft(centavos(corpo.frete), `${rotulo}: frete`).toBe(gratis ? 0 : 1990);
+      98 |   expect.soft(centavos(corpo.valorFaltanteFreteGratis), `${rotulo}: faltante = max(0, 200 - subtotal)`).toBe(Math.max(0, 20000 - centavos(corpo.subtotal)));
+      99 |   if (corpo.cupom?.aplicado) {
+        at expectInvariantes (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:96:81)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:199:26
+
+    Error: 2×P005 (sem cupom): frete
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1990
+
+       at api\support.ts:97
+
+       95 |   const gratis = centavos(corpo.subtotal) >= 20000;
+       96 |   expect.soft(corpo.freteGratis, `${rotulo}: freteGratis (subtotal >= 200,00)`).toBe(gratis);
+    >  97 |   expect.soft(centavos(corpo.frete), `${rotulo}: frete`).toBe(gratis ? 0 : 1990);
+          |                                                          ^
+       98 |   expect.soft(centavos(corpo.valorFaltanteFreteGratis), `${rotulo}: faltante = max(0, 200 - subtotal)`).toBe(Math.max(0, 20000 - centavos(corpo.subtotal)));
+       99 |   if (corpo.cupom?.aplicado) {
+      100 |     expect.soft(centavos(corpo.desconto), `${rotulo}: desconto = 10% do subtotal`).toBe(Math.round(centavos(corpo.subtotal) / 10));
+        at expectInvariantes (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:97:58)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:199:26
+
+    Error: 2×P005 (BEMVINDO10): freteGratis (subtotal >= 200,00)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at api\support.ts:96
+
+      94 |   expect.soft(centavos(corpo.total), `${rotulo}: total = subtotal - desconto + frete`).toBe(centavos(corpo.subtotal) - centavos(corpo.desconto) + centavos(corpo.frete));
+      95 |   const gratis = centavos(corpo.subtotal) >= 20000;
+    > 96 |   expect.soft(corpo.freteGratis, `${rotulo}: freteGratis (subtotal >= 200,00)`).toBe(gratis);
+         |                                                                                 ^
+      97 |   expect.soft(centavos(corpo.frete), `${rotulo}: frete`).toBe(gratis ? 0 : 1990);
+      98 |   expect.soft(centavos(corpo.valorFaltanteFreteGratis), `${rotulo}: faltante = max(0, 200 - subtotal)`).toBe(Math.max(0, 20000 - centavos(corpo.subtotal)));
+      99 |   if (corpo.cupom?.aplicado) {
+        at expectInvariantes (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:96:81)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:199:26
+
+    Error: 2×P005 (BEMVINDO10): frete
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1990
+
+       at api\support.ts:97
+
+       95 |   const gratis = centavos(corpo.subtotal) >= 20000;
+       96 |   expect.soft(corpo.freteGratis, `${rotulo}: freteGratis (subtotal >= 200,00)`).toBe(gratis);
+    >  97 |   expect.soft(centavos(corpo.frete), `${rotulo}: frete`).toBe(gratis ? 0 : 1990);
+          |                                                          ^
+       98 |   expect.soft(centavos(corpo.valorFaltanteFreteGratis), `${rotulo}: faltante = max(0, 200 - subtotal)`).toBe(Math.max(0, 20000 - centavos(corpo.subtotal)));
+       99 |   if (corpo.cupom?.aplicado) {
+      100 |     expect.soft(centavos(corpo.desconto), `${rotulo}: desconto = 10% do subtotal`).toBe(Math.round(centavos(corpo.subtotal) / 10));
+        at expectInvariantes (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:97:58)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\calculo.spec.ts:199:26
+
+    Error Context: test-results\api-calculo-Cálculo-e-arre-260a3-s-carrinhos-com-e-sem-cupom-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-calculo-Cálculo-e-arre-260a3-s-carrinhos-com-e-sem-cupom-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-calculo-Cálculo-e-arre-260a3-s-carrinhos-com-e-sem-cupom-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 6 unidades do mesmo produto (CA10: vale para a API) 
+
+    Error: status HTTP (corpo recebido: {"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":6,"total":359.4}],"subtotal":359.4,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":359.4,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 200
+
+       at api\support.ts:52
+
+      50 | export async function expectErro(resp: APIResponse, status: number, codigo: string) {
+      51 |   const texto = await resp.text();
+    > 52 |   expect(resp.status(), `status HTTP (corpo recebido: ${texto})`).toBe(status);
+         |                                                                   ^
+      53 |   const corpo = JSON.parse(texto);
+      54 |   expect(corpo.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      55 |   expect(corpo.erro.codigo).toBe(codigo);
+        at expectErro (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:52:67)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\validacao.spec.ts:10:7
+
+    Error Context: test-results\api-validacao-Quantidade-r-b2467-oduto-CA10-vale-para-a-API--api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-validacao-Quantidade-r-b2467-oduto-CA10-vale-para-a-API--api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-validacao-Quantidade-r-b2467-oduto-CA10-vale-para-a-API--api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 10 unidades do mesmo produto (CA10: vale para a API) 
+
+    Error: status HTTP (corpo recebido: {"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":10,"total":599}],"subtotal":599,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":599,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 200
+
+       at api\support.ts:52
+
+      50 | export async function expectErro(resp: APIResponse, status: number, codigo: string) {
+      51 |   const texto = await resp.text();
+    > 52 |   expect(resp.status(), `status HTTP (corpo recebido: ${texto})`).toBe(status);
+         |                                                                   ^
+      53 |   const corpo = JSON.parse(texto);
+      54 |   expect(corpo.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      55 |   expect(corpo.erro.codigo).toBe(codigo);
+        at expectErro (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:52:67)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\validacao.spec.ts:10:7
+
+    Error Context: test-results\api-validacao-Quantidade-r-3633a-oduto-CA10-vale-para-a-API--api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-validacao-Quantidade-r-3633a-oduto-CA10-vale-para-a-API--api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-validacao-Quantidade-r-3633a-oduto-CA10-vale-para-a-API--api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 100 unidades do mesmo produto (CA10: vale para a API) 
+
+    Error: status HTTP (corpo recebido: {"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":100,"total":5990}],"subtotal":5990,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":5990,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 200
+
+       at api\support.ts:52
+
+      50 | export async function expectErro(resp: APIResponse, status: number, codigo: string) {
+      51 |   const texto = await resp.text();
+    > 52 |   expect(resp.status(), `status HTTP (corpo recebido: ${texto})`).toBe(status);
+         |                                                                   ^
+      53 |   const corpo = JSON.parse(texto);
+      54 |   expect(corpo.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      55 |   expect(corpo.erro.codigo).toBe(codigo);
+        at expectErro (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:52:67)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\validacao.spec.ts:10:7
+
+    Error Context: test-results\api-validacao-Quantidade-r-b5d11-oduto-CA10-vale-para-a-API--api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-validacao-Quantidade-r-b5d11-oduto-CA10-vale-para-a-API--api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-validacao-Quantidade-r-b5d11-oduto-CA10-vale-para-a-API--api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [api] › tests\api\validacao.spec.ts:14:7 › Quantidade: regras de rejeição › CT-QTD-05 | /pedidos rejeita 6 unidades do mesmo produto 
+
+    Error: status HTTP (corpo recebido: {"numero":"VZ-917289","criadoEm":"2026-10-07T00:18:40.260Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":6,"total":359.4}],"subtotal":359.4,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":359.4,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 201
+
+       at api\support.ts:52
+
+      50 | export async function expectErro(resp: APIResponse, status: number, codigo: string) {
+      51 |   const texto = await resp.text();
+    > 52 |   expect(resp.status(), `status HTTP (corpo recebido: ${texto})`).toBe(status);
+         |                                                                   ^
+      53 |   const corpo = JSON.parse(texto);
+      54 |   expect(corpo.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      55 |   expect(corpo.erro.codigo).toBe(codigo);
+        at expectErro (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:52:67)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\validacao.spec.ts:16:5
+
+    Error Context: test-results\api-validacao-Quantidade-r-05f66-6-unidades-do-mesmo-produto-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-validacao-Quantidade-r-05f66-6-unidades-do-mesmo-produto-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-validacao-Quantidade-r-05f66-6-unidades-do-mesmo-produto-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [api] › tests\api\validacao.spec.ts:19:7 › Quantidade: regras de rejeição › CT-QTD-05 | basta um item acima do limite para rejeitar o carrinho todo 
+
+    Error: status HTTP (corpo recebido: {"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":1,"total":59.9},{"produtoId":"P002","nome":"Calça Jeans Slim","precoUnitario":139.9,"quantidade":6,"total":839.4}],"subtotal":899.3,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":899.3,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 200
+
+       at api\support.ts:52
+
+      50 | export async function expectErro(resp: APIResponse, status: number, codigo: string) {
+      51 |   const texto = await resp.text();
+    > 52 |   expect(resp.status(), `status HTTP (corpo recebido: ${texto})`).toBe(status);
+         |                                                                   ^
+      53 |   const corpo = JSON.parse(texto);
+      54 |   expect(corpo.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      55 |   expect(corpo.erro.codigo).toBe(codigo);
+        at expectErro (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\support.ts:52:67)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\tests\api\validacao.spec.ts:20:5
+
+    Error Context: test-results\api-validacao-Quantidade-r-0bde9-ra-rejeitar-o-carrinho-todo-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\api-validacao-Quantidade-r-0bde9-ra-rejeitar-o-carrinho-todo-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\api-validacao-Quantidade-r-0bde9-ra-rejeitar-o-carrinho-todo-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9 failed
+    [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-02 | subtotal exatamente 200,00 (2×P005): limite inclusivo, frete grátis 
+    [api] › tests\api\calculo.spec.ts:106:9 › Frete grátis › CT-FRE-02 | subtotal exatamente 200,00 por outra combinação (4×P008) 
+    [api] › tests\api\calculo.spec.ts:113:7 › Frete grátis › CT-FRE-05 | CA08: subtotal 200,00 com cupom (desconto 20,00) continua com frete grátis 
+    [api] › tests\api\calculo.spec.ts:194:7 › Cálculo e arredondamento › CT-CAL-01 | invariantes (fórmula do total, regra do frete, faltante, soma dos itens, 2 casas) em vários carrinhos, com e sem cupom 
+    [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 6 unidades do mesmo produto (CA10: vale para a API) 
+    [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 10 unidades do mesmo produto (CA10: vale para a API) 
+    [api] › tests\api\validacao.spec.ts:9:9 › Quantidade: regras de rejeição › CT-QTD-05 | /calcular rejeita 100 unidades do mesmo produto (CA10: vale para a API) 
+    [api] › tests\api\validacao.spec.ts:14:7 › Quantidade: regras de rejeição › CT-QTD-05 | /pedidos rejeita 6 unidades do mesmo produto 
+    [api] › tests\api\validacao.spec.ts:19:7 › Quantidade: regras de rejeição › CT-QTD-05 | basta um item acima do limite para rejeitar o carrinho todo 
+  93 passed (18.5s)
+
+To open last HTML report run:
+
+  npx playwright show-report
+
