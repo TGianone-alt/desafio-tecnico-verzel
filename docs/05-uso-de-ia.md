@@ -1,21 +1,26 @@
 # Uso de IA neste teste
 
-## O que a IA (Claude, da Anthropic) fez
+O enunciado permite o uso de IA e pede que se conte **onde e como** ela foi usada. Este arquivo registra isso; o mesmo texto foi usado no campo "Onde e como você usou IA" do formulário de envio.
 
-- [ ] Leitura da documentação e levantamento inicial de cenários, ambiguidades e valores-limite (`docs/01`, `docs/02`).
-- [ ] Rascunho dos cenários em Gherkin (`features/`).
-- [ ] Estrutura do repositório, configuração do Playwright e escrita da suíte de testes de API (`tests/api/`).
-- [ ] Rascunho do page object e dos testes de UI (`tests/e2e/`) — **não validados contra a interface real** até os seletores serem confirmados.
-- [ ] Templates de bug, de evidências e deste README.
+**Ferramenta:** Claude (Anthropic), em conversa de chat, ao longo de todo o teste.
 
-Validação feita sobre o código gerado: a suíte de API foi executada contra um mock local escrito a partir da documentação (102 testes passando) e contra versões do mock com bugs plantados (limite do frete exclusivo, frete calculado após o desconto, ausência de arredondamento, cupom sensível a maiúsculas) para confirmar que os testes os detectam. O mock não faz parte do repositório.
+## O que a IA fez
+- Leitura da documentação e levantamento inicial de cenários, valores-limite e ambiguidades (`docs/01`, `docs/02`).
+- Rascunho dos cenários em Gherkin (`features/`) e das definições de passos que os executam com Playwright BDD (`steps/`, `support/`).
+- Estrutura do repositório, configuração do Playwright e geração das tabelas e templates (`docs/03`, `docs/04`, templates de bug e de evidências).
+- Rascunho dos reports de bug e do README, a partir das evidências que eu fui trazendo (respostas da API, prints e resultados dos testes).
+- Rascunho do page object e do cenário de UI (`support/loja.page.ts`, `features/ui.feature`). **Esta parte é rascunho e não foi validada contra a interface real**; por isso fica fora da execução padrão.
 
-## O que foi feito por mim (sem delegar à IA)
+## O que eu fiz (sem delegar)
+- Executei todos os testes manuais e exploratórios na loja real, pela interface e pela API, e registrei os resultados.
+- Capturei todas as evidências (prints do terminal, do navegador e do DevTools).
+- Rodei a automação na loja real, reproduzi manualmente cada falha antes de tratá-la como bug e confirmei os bugs na interface.
+- Conferi o material gerado com a documentação, ajustei o que não batia e criei o repositório.
 
-- [ ] Execução manual e exploratória na loja real, com os resultados em `docs/03-execucao.md`.
-- [ ] Captura das evidências (`docs/evidencias/`).
-- [ ] Confirmação de cada bug na aplicação real e redação final dos reports (`docs/bugs/`).
-- [ ] Execução da automação no ambiente real e conferência dos resultados.
-- [ ] Revisão e ajuste de todo o material gerado com IA.
+## Como o material gerado por IA foi validado
+- A suíte BDD de API foi executada contra um simulador local escrito a partir da documentação (119 cenários passando) e contra versões dele com bugs plantados (limite do frete exclusivo, frete calculado depois do desconto, ausência de arredondamento e cupom sensível a maiúsculas): todos foram detectados. O simulador não faz parte do repositório.
+- Os valores esperados vêm exclusivamente da documentação. As falhas encontradas na loja real foram reproduzidas manualmente (API e interface) antes de virarem bug.
+- Interpretações de trechos ambíguos estão em `docs/01-premissas-e-ambiguidades.md`.
 
-> Usei o Claude (Anthropic) como assistente. Ele me ajudou a (1) estruturar o repositório, (2) levantar cenários e valores-limite a partir da documentação e rascunhar os cenários em Gherkin, (3) escrever a suíte de testes de API em Playwright/TypeScript e (4) montar os templates de bug e evidências. A execução manual e exploratória, a captura das evidências, a confirmação e o report dos bugs foram feitos por mim na loja real, e revisei/ajustei todo o material gerado.
+## Texto usado no formulário
+> Usei o Claude (Anthropic) como assistente durante todo o teste. Ele me ajudou a levantar cenários e valores-limite a partir da documentação, a rascunhar os cenários em Gherkin e as definições de passos em Playwright/TypeScript (BDD), a estruturar o repositório e a rascunhar os reports de bug, o README e as tabelas de execução. A execução manual e exploratória na loja real, a captura das evidências, a reprodução e confirmação dos bugs (pela API e pela interface) e a conferência de todo o material gerado foram feitas por mim. A parte de automação de UI está em rascunho e não foi validada contra a interface real.

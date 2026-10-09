@@ -4,7 +4,7 @@ Quatro sessões com missão definida (charters do [docs/02](02-cenarios-e-rastre
 
 **Como preencher:** cronometre cerca de 30 minutos por sessão. Enquanto explora, anote em poucas linhas. Se achar algo estranho, tire print (`EXP-0X_nn-descricao.png` em `docs/evidencias`) e confirme se é bug (abra `BUG-003.md`...) ou só observação. Apague as linhas de ideia que não usar.
 
-**Ambiente:** Google Chrome (versão _preencher_), Windows. Data: _preencher_.
+**Ambiente:** Google Chrome, Windows. Datas: 06 e 07/10/2026.
 
 ---
 
@@ -21,10 +21,10 @@ Quatro sessões com missão definida (charters do [docs/02](02-cenarios-e-rastre
 
 | Campo | Anotações |
 |---|---|
-| Duração | _preencher_ |
-| O que fiz | Aplicar cupom e esvaziar o carrinho de dois jeitos (Esvaziar carrinho e Remover o único item); recarregar a página (F5) com cupom aplicado; cruzar o limite de R$ 200,00 várias vezes adicionando e removendo itens; cliques duplos em botões; abrir /checkout com o carrinho vazio. |
-| O que observei | F5 mantém carrinho e cupom. Cruzar o limite de R$ 200,00 responde corretamente (exceto no valor exato, BUG-001). Cliques duplos não alteram nada. /checkout com carrinho vazio mostra a tela "Seu carrinho está vazio". "Esvaziar carrinho" age sem pedir confirmação. O cupom sai em "Esvaziar carrinho", mas permanece ao remover o último item e adicionar outro. |
-| Bugs / dúvidas | BUG-003 (inconsistência do cupom ao esvaziar o carrinho). Observação: "Esvaziar carrinho" sem confirmação. Pendente: botão voltar do navegador depois de confirmar um pedido. |
+| Duração | não cronometrada |
+| O que fiz | Apliquei cupom e esvaziei o carrinho de dois jeitos (Esvaziar carrinho e Remover o único item); recarreguei a página (F5) com cupom aplicado; cruzei o limite de R$ 200,00 várias vezes; dei cliques duplos nos botões; abri /checkout com o carrinho vazio; usei o botão voltar do navegador depois de confirmar um pedido. |
+| O que observei | F5 mantém carrinho e cupom. Cruzar o limite de R$ 200,00 responde corretamente (exceto no valor exato, BUG-001). Cliques duplos não alteram nada. /checkout com carrinho vazio mostra 'Seu carrinho está vazio'. O botão voltar após o pedido mostra o carrinho vazio. 'Esvaziar carrinho' age sem pedir confirmação. O cupom sai em 'Esvaziar carrinho', mas permanece ao remover o último item e adicionar outro. |
+| Bugs / dúvidas | BUG-003 (inconsistência do cupom ao esvaziar o carrinho). Observação: 'Esvaziar carrinho' sem confirmação. |
 | Evidências | EXP-01_01-esvaziar-remove-cupom.png; EXP-01_02-remover-item-mantem-cupom.png |
 
 ---
@@ -39,11 +39,11 @@ Quatro sessões com missão definida (charters do [docs/02](02-cenarios-e-rastre
 
 | Campo | Anotações |
 |---|---|
-| Duração | |
-| O que fiz | |
-| O que observei | |
-| Bugs / dúvidas | |
-| Evidências | |
+| Duração | não cronometrada |
+| O que fiz | Testei subtotais ao redor do limite (199,60; 199,80; 199,90; 200,00; 219,80; 229,90), o valor máximo (5 unidades de cada um dos 8 produtos) com e sem cupom e valores com centavos no desconto. |
+| O que observei | Todos os valores responderam corretamente, com ponto de milhar e centavos certos, exceto o subtotal exato de R$ 200,00: a tela ainda cobra o frete e diz 'Faltam R$ 0,00 para o frete grátis'. |
+| Bugs / dúvidas | BUG-001 (já reportado; sem bug novo). |
+| Evidências | BUG-001_02; BUG-001_06 |
 
 ---
 
@@ -60,11 +60,11 @@ Quatro sessões com missão definida (charters do [docs/02](02-cenarios-e-rastre
 
 | Campo | Anotações |
 |---|---|
-| Duração | |
-| O que fiz | |
-| O que observei | |
-| Bugs / dúvidas | |
-| Evidências | |
+| Duração | não cronometrada |
+| O que fiz | Executei as ideias do charter: tela de celular, zoom, navegação, mensagens de erro e console do navegador. |
+| O que observei | Tudo respondeu como esperado: nada sobreposto ou cortado em celular e com zoom; console sem erros relevantes (uma falha momentânea de fonte no primeiro carregamento não se repetiu). |
+| Bugs / dúvidas | Nenhum bug. |
+| Evidências | — |
 
 ---
 
@@ -80,8 +80,8 @@ Quatro sessões com missão definida (charters do [docs/02](02-cenarios-e-rastre
 
 | Campo | Anotações |
 |---|---|
-| Duração | |
-| O que fiz | |
-| O que observei | |
-| Bugs / dúvidas | |
-| Evidências | |
+| Duração | não cronometrada |
+| O que fiz | Testei entradas atípicas em todos os campos de texto (nome, e-mail, CEP e cupom), sem payloads de segurança. |
+| O que observei | Tudo respondeu como esperado. O campo de nome aceita vários espaços entre nome e sobrenome e os campos não aparentam ter limite de caracteres. Com 8 letras no CEP aparece 'Informe um CEP com 8 dígitos.'. |
+| Bugs / dúvidas | Nenhum bug. Observações de melhoria (a documentação não define): limite de caracteres e normalização de espaços no nome. |
+| Evidências | — |

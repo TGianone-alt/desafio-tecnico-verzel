@@ -9,7 +9,7 @@ O que registrar em cada cenário (o suficiente para outra pessoa reproduzir e co
 - **Automação:** salvar a saída do comando em `automacao/execucao-AAAA-MM-DD.txt`:
 
   ```bash
-  npx playwright test --project=api --reporter=list > docs/evidencias/automacao/execucao-$(date +%F).txt
+  npm test > docs/evidencias/automacao/execucao-bdd-AAAA-MM-DD.txt   (PowerShell: npm test | Out-File -Encoding utf8 docs\evidencias\automacao\execucao-bdd-AAAA-MM-DD.txt)
   ```
   e, se quiser publicar o relatório HTML, copiar a pasta `playwright-report/` para `docs/evidencias/automacao/relatorio/`.
 

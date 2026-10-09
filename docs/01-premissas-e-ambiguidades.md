@@ -16,7 +16,7 @@ Conforme a seção "Sobre este ambiente" da documentação:
 ## 2. Ambiguidades e interpretação adotada
 
 | ID | Trecho / tema | Ambiguidade | Interpretação adotada | Tratamento nos testes |
-|
+|---|---|---|---|---|
 | AMB-01 | CA05 — um cupom por vez | Só existe **um** cupom válido (BEMVINDO10); o outro está expirado. Não dá para aplicar "dois cupons válidos". A UI ao tentar um 2º cupom (mensagem, bloqueio ou troca automática) não está definida. | O desconto nunca pode acumular (reaplicar BEMVINDO10 mantém 10%, não 20%). Para trocar, o cliente remove o atual e aplica outro. Se a UI só não tiver mensagem específica, registro como observação, não como bug. | CT-CUP-05, CT-CUP-06 (manuais) |
 | AMB-02 | CA03/CA04 com cupom válido já aplicado | "Nenhum desconto é aplicado" pode ser lido como (a) o cupom rejeitado não é aplicado e o vigente permanece, ou (b) o desconto some. | (a): o cupom rejeitado não altera o cupom vigente. Divergência será reportada como "ambiguidade/melhoria", com severidade baixa. | CT-CUP-07 (manual) |
 | AMB-03 | Campo de cupom vazio ou só com espaços | A documentação não diz se isso é "cupom inválido" ou "sem cupom". | Não pode haver desconto, erro técnico (5xx, tela quebrada) nem alteração do cupom vigente. A mensagem exata fica livre. | CT-CUP-08 (manual/exploratório) |

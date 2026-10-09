@@ -1,0 +1,497 @@
+﻿
+> verzel-store-qa-vzs-142@1.0.0 test
+> bddgen && playwright test --project=api
+
+
+Running 119 tests using 2 workers
+
+  ✓    1 [api] › .features-gen\api\features\calculo.feature.spec.js:8:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 1 @VZS-142 @calculo @CT-CAL-01 @api @auto (312ms)
+  ✓    2 [api] › .features-gen\api\features\api.feature.spec.js:6:7 › Contrato da API (catálogo, rotas e erros) › Listar produtos @VZS-142 @api @CT-API-01 @auto (317ms)
+  ✓    3 [api] › .features-gen\api\features\calculo.feature.spec.js:15:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 2 @VZS-142 @calculo @CT-CAL-01 @api @auto (46ms)
+  ✓    4 [api] › .features-gen\api\features\api.feature.spec.js:14:9 › Contrato da API (catálogo, rotas e erros) › Consultar produto por id existente › Exemplo 1 @VZS-142 @api @CT-API-02 @auto (52ms)
+  ✓    5 [api] › .features-gen\api\features\calculo.feature.spec.js:22:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 3 @VZS-142 @calculo @CT-CAL-01 @api @auto (41ms)
+  ✓    6 [api] › .features-gen\api\features\api.feature.spec.js:20:9 › Contrato da API (catálogo, rotas e erros) › Consultar produto por id existente › Exemplo 2 @VZS-142 @api @CT-API-02 @auto (60ms)
+  ✓    7 [api] › .features-gen\api\features\calculo.feature.spec.js:29:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 4 @VZS-142 @calculo @CT-CAL-01 @api @auto (46ms)
+  ✓    8 [api] › .features-gen\api\features\api.feature.spec.js:26:9 › Contrato da API (catálogo, rotas e erros) › Consultar produto por id existente › Exemplo 3 @VZS-142 @api @CT-API-02 @auto (52ms)
+  ✓    9 [api] › .features-gen\api\features\calculo.feature.spec.js:36:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 5 @VZS-142 @calculo @CT-CAL-01 @api @auto (42ms)
+  ✓   10 [api] › .features-gen\api\features\api.feature.spec.js:32:9 › Contrato da API (catálogo, rotas e erros) › Consultar produto por id existente › Exemplo 4 @VZS-142 @api @CT-API-02 @auto (52ms)
+  ✓   12 [api] › .features-gen\api\features\api.feature.spec.js:38:9 › Contrato da API (catálogo, rotas e erros) › Consultar produto por id existente › Exemplo 5 @VZS-142 @api @CT-API-02 @auto (44ms)
+  ✘   11 [api] › .features-gen\api\features\calculo.feature.spec.js:43:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 6 @VZS-142 @calculo @CT-CAL-01 @api @auto (69ms)
+  ✓   13 [api] › .features-gen\api\features\api.feature.spec.js:44:9 › Contrato da API (catálogo, rotas e erros) › Consultar produto por id existente › Exemplo 6 @VZS-142 @api @CT-API-02 @auto (41ms)
+  ✓   14 [api] › .features-gen\api\features\api.feature.spec.js:50:9 › Contrato da API (catálogo, rotas e erros) › Consultar produto por id existente › Exemplo 7 @VZS-142 @api @CT-API-02 @auto (57ms)
+  ✓   15 [api] › .features-gen\api\features\api.feature.spec.js:56:9 › Contrato da API (catálogo, rotas e erros) › Consultar produto por id existente › Exemplo 8 @VZS-142 @api @CT-API-02 @auto (47ms)
+  ✓   16 [api] › .features-gen\api\features\api.feature.spec.js:64:7 › Contrato da API (catálogo, rotas e erros) › Consultar produto inexistente @VZS-142 @api @CT-API-02 @auto (54ms)
+  ✓   17 [api] › .features-gen\api\features\api.feature.spec.js:69:7 › Contrato da API (catálogo, rotas e erros) › Rota inexistente com GET @VZS-142 @api @CT-API-03 @auto (53ms)
+  ✓   18 [api] › .features-gen\api\features\api.feature.spec.js:74:7 › Contrato da API (catálogo, rotas e erros) › Rota inexistente com POST @VZS-142 @api @CT-API-03 @auto (55ms)
+  ✓   19 [api] › .features-gen\api\features\api.feature.spec.js:81:9 › Contrato da API (catálogo, rotas e erros) › Método HTTP não permitido › Exemplo 1 @VZS-142 @api @CT-API-04 @auto (51ms)
+  ✓   20 [api] › .features-gen\api\features\api.feature.spec.js:86:9 › Contrato da API (catálogo, rotas e erros) › Método HTTP não permitido › Exemplo 2 @VZS-142 @api @CT-API-04 @auto (45ms)
+  ✓   22 [api] › .features-gen\api\features\api.feature.spec.js:91:9 › Contrato da API (catálogo, rotas e erros) › Método HTTP não permitido › Exemplo 3 @VZS-142 @api @CT-API-04 @auto (71ms)
+  ✓   21 [api] › .features-gen\api\features\calculo.feature.spec.js:50:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 7 @VZS-142 @calculo @CT-CAL-01 @api @auto (105ms)
+  ✓   24 [api] › .features-gen\api\features\calculo.feature.spec.js:57:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 8 @VZS-142 @calculo @CT-CAL-01 @api @auto (81ms)
+  ✓   25 [api] › .features-gen\api\features\calculo.feature.spec.js:68:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 1 @VZS-142 @calculo @CT-CAL-01 @api @auto (45ms)
+  ✓   23 [api] › .features-gen\api\features\api.feature.spec.js:96:9 › Contrato da API (catálogo, rotas e erros) › Método HTTP não permitido › Exemplo 4 @VZS-142 @api @CT-API-04 @auto (163ms)
+  ✓   26 [api] › .features-gen\api\features\calculo.feature.spec.js:75:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 2 @VZS-142 @calculo @CT-CAL-01 @api @auto (52ms)
+  ✓   27 [api] › .features-gen\api\features\api.feature.spec.js:101:9 › Contrato da API (catálogo, rotas e erros) › Método HTTP não permitido › Exemplo 5 @VZS-142 @api @CT-API-04 @auto (51ms)
+  ✓   28 [api] › .features-gen\api\features\calculo.feature.spec.js:82:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 3 @VZS-142 @calculo @CT-CAL-01 @api @auto (42ms)
+  ✓   30 [api] › .features-gen\api\features\calculo.feature.spec.js:89:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 4 @VZS-142 @calculo @CT-CAL-01 @api @auto (49ms)
+  ✓   29 [api] › .features-gen\api\features\api.feature.spec.js:110:9 › Contrato da API (catálogo, rotas e erros) › JSON malformado › Exemplo 1 @VZS-142 @api @CT-API-05 @auto (116ms)
+  ✓   32 [api] › .features-gen\api\features\api.feature.spec.js:115:9 › Contrato da API (catálogo, rotas e erros) › JSON malformado › Exemplo 2 @VZS-142 @api @CT-API-05 @auto (44ms)
+  ✓   31 [api] › .features-gen\api\features\calculo.feature.spec.js:96:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 5 @VZS-142 @calculo @CT-CAL-01 @api @auto (96ms)
+  ✓   33 [api] › .features-gen\api\features\api.feature.spec.js:120:9 › Contrato da API (catálogo, rotas e erros) › JSON malformado › Exemplo 3 @VZS-142 @api @CT-API-05 @auto (47ms)
+  ✓   35 [api] › .features-gen\api\features\api.feature.spec.js:125:9 › Contrato da API (catálogo, rotas e erros) › JSON malformado › Exemplo 4 @VZS-142 @api @CT-API-05 @auto (82ms)
+  ✘   34 [api] › .features-gen\api\features\calculo.feature.spec.js:103:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 6 @VZS-142 @calculo @CT-CAL-01 @api @auto (97ms)
+  ✓   36 [api] › .features-gen\api\features\api.feature.spec.js:130:9 › Contrato da API (catálogo, rotas e erros) › JSON malformado › Exemplo 5 @VZS-142 @api @CT-API-05 @auto (36ms)
+  ✓   37 [api] › .features-gen\api\features\api.feature.spec.js:135:9 › Contrato da API (catálogo, rotas e erros) › JSON malformado › Exemplo 6 @VZS-142 @api @CT-API-05 @auto (39ms)
+  ✓   38 [api] › .features-gen\api\features\api.feature.spec.js:144:9 › Contrato da API (catálogo, rotas e erros) › Corpo que não é um objeto JSON › Exemplo 1 @VZS-142 @api @CT-API-05 @auto (41ms)
+  ✓   39 [api] › .features-gen\api\features\api.feature.spec.js:149:9 › Contrato da API (catálogo, rotas e erros) › Corpo que não é um objeto JSON › Exemplo 2 @VZS-142 @api @CT-API-05 @auto (38ms)
+  ✓   40 [api] › .features-gen\api\features\api.feature.spec.js:154:9 › Contrato da API (catálogo, rotas e erros) › Corpo que não é um objeto JSON › Exemplo 3 @VZS-142 @api @CT-API-05 @auto (37ms)
+  ✓   41 [api] › .features-gen\api\features\api.feature.spec.js:159:9 › Contrato da API (catálogo, rotas e erros) › Corpo que não é um objeto JSON › Exemplo 4 @VZS-142 @api @CT-API-05 @auto (40ms)
+  ✓   42 [api] › .features-gen\api\features\api.feature.spec.js:164:9 › Contrato da API (catálogo, rotas e erros) › Corpo que não é um objeto JSON › Exemplo 5 @VZS-142 @api @CT-API-05 @auto (35ms)
+  ✓   43 [api] › .features-gen\api\features\api.feature.spec.js:169:9 › Contrato da API (catálogo, rotas e erros) › Corpo que não é um objeto JSON › Exemplo 6 @VZS-142 @api @CT-API-05 @auto (34ms)
+  ✓   44 [api] › .features-gen\api\features\api.feature.spec.js:174:9 › Contrato da API (catálogo, rotas e erros) › Corpo que não é um objeto JSON › Exemplo 7 @VZS-142 @api @CT-API-05 @auto (63ms)
+  ✓   45 [api] › .features-gen\api\features\api.feature.spec.js:179:9 › Contrato da API (catálogo, rotas e erros) › Corpo que não é um objeto JSON › Exemplo 8 @VZS-142 @api @CT-API-05 @auto (72ms)
+  ✓   46 [api] › .features-gen\api\features\calculo.feature.spec.js:110:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 7 @VZS-142 @calculo @CT-CAL-01 @api @auto (82ms)
+  ✓   47 [api] › .features-gen\api\features\api.feature.spec.js:188:9 › Contrato da API (catálogo, rotas e erros) › Lista de itens ausente ou vazia › Exemplo 1 @VZS-142 @api @CT-API-06 @auto (45ms)
+  ✓   48 [api] › .features-gen\api\features\calculo.feature.spec.js:117:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 8 @VZS-142 @calculo @CT-CAL-01 @api @auto (45ms)
+  ✓   49 [api] › .features-gen\api\features\api.feature.spec.js:193:9 › Contrato da API (catálogo, rotas e erros) › Lista de itens ausente ou vazia › Exemplo 2 @VZS-142 @api @CT-API-06 @auto (58ms)
+  ✓   50 [api] › .features-gen\api\features\calculo.feature.spec.js:126:7 › Cálculo do carrinho › Valores com no máximo 2 casas decimais, sem artefato de ponto flutuante (sem cupom) @VZS-142 @calculo @CT-CAL-02 @CA11 @api @ui @auto (45ms)
+  ✓   51 [api] › .features-gen\api\features\api.feature.spec.js:202:9 › Contrato da API (catálogo, rotas e erros) › Item que não é um objeto › Exemplo 1 @VZS-142 @api @CT-API-07 @auto (74ms)
+  ✓   52 [api] › .features-gen\api\features\calculo.feature.spec.js:136:7 › Cálculo do carrinho › Valores com no máximo 2 casas decimais, sem artefato de ponto flutuante (com cupom) @VZS-142 @calculo @CT-CAL-02 @CA11 @api @ui @auto (49ms)
+  ✓   53 [api] › .features-gen\api\features\api.feature.spec.js:207:9 › Contrato da API (catálogo, rotas e erros) › Item que não é um objeto › Exemplo 2 @VZS-142 @api @CT-API-07 @auto (34ms)
+  ✓   55 [api] › .features-gen\api\features\api.feature.spec.js:214:7 › Contrato da API (catálogo, rotas e erros) › Produto inexistente na lista de itens @VZS-142 @api @CT-API-08 @auto (35ms)
+  ✓   54 [api] › .features-gen\api\features\calculo.feature.spec.js:146:7 › Cálculo do carrinho › O cálculo não guarda estado entre chamadas @VZS-142 @calculo @CT-CAL-05 @api @auto (61ms)
+  ✓   56 [api] › .features-gen\api\features\api.feature.spec.js:220:7 › Contrato da API (catálogo, rotas e erros) › Formato padrão de erro (exemplo da documentação) @VZS-142 @api @CT-API-09 @auto (43ms)
+  ✓   57 [api] › .features-gen\api\features\cupom.feature.spec.js:10:7 › Cupom de desconto no carrinho › BEMVINDO10 aplica 10% de desconto sobre o subtotal dos produtos @VZS-142 @cupom @CT-CUP-01 @CA01 @api @ui @auto (48ms)
+  ✓   58 [api] › .features-gen\api\features\api.feature.spec.js:228:7 › Contrato da API (catálogo, rotas e erros) › O campo do erro aponta o índice correto do item @VZS-142 @api @CT-API-09 @auto (38ms)
+  ✓   59 [api] › .features-gen\api\features\cupom.feature.spec.js:25:9 › Cupom de desconto no carrinho › O código do cupom ignora maiúsculas/minúsculas e espaços nas pontas › Exemplo 1 @VZS-142 @cupom @CT-CUP-02 @CA02 @api @ui @auto (40ms)
+  ✓   60 [api] › .features-gen\api\features\api.feature.spec.js:235:7 › Contrato da API (catálogo, rotas e erros) › Cálculo tolera cupom inválido (200); pedido não (422) @VZS-142 @api @CT-API-10 @auto (46ms)
+  ✓   61 [api] › .features-gen\api\features\cupom.feature.spec.js:34:9 › Cupom de desconto no carrinho › O código do cupom ignora maiúsculas/minúsculas e espaços nas pontas › Exemplo 2 @VZS-142 @cupom @CT-CUP-02 @CA02 @api @ui @auto (44ms)
+  ✓   62 [api] › .features-gen\api\features\frete.feature.spec.js:8:9 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal abaixo de R$ 200,00 cobra frete fixo e informa quanto falta @VZS-142 @frete @CT-FRE-01 @CA07 @api @ui @auto (44ms)
+  ✓   63 [api] › .features-gen\api\features\cupom.feature.spec.js:43:9 › Cupom de desconto no carrinho › O código do cupom ignora maiúsculas/minúsculas e espaços nas pontas › Exemplo 3 @VZS-142 @cupom @CT-CUP-02 @CA02 @api @ui @auto (62ms)
+  ✘   64 [api] › .features-gen\api\features\frete.feature.spec.js:20:11 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal exatamente igual a R$ 200,00 tem frete grátis (limite inclusivo) › Exemplo 1 @VZS-142 @frete @CT-FRE-02 @CA06 @api @ui @auto (54ms)
+  ✓   65 [api] › .features-gen\api\features\cupom.feature.spec.js:52:9 › Cupom de desconto no carrinho › O código do cupom ignora maiúsculas/minúsculas e espaços nas pontas › Exemplo 4 @VZS-142 @cupom @CT-CUP-02 @CA02 @api @ui @auto (57ms)
+  ✓   66 [api] › .features-gen\api\features\cupom.feature.spec.js:61:9 › Cupom de desconto no carrinho › O código do cupom ignora maiúsculas/minúsculas e espaços nas pontas › Exemplo 5 @VZS-142 @cupom @CT-CUP-02 @CA02 @api @ui @auto (67ms)
+  ✓   67 [api] › .features-gen\api\features\cupom.feature.spec.js:74:9 › Cupom de desconto no carrinho › Cupom inexistente não gera desconto › Exemplo 1 @VZS-142 @cupom @CT-CUP-03 @CA03 @api @ui @auto (50ms)
+  ✓   68 [api] › .features-gen\api\features\cupom.feature.spec.js:84:9 › Cupom de desconto no carrinho › Cupom inexistente não gera desconto › Exemplo 2 @VZS-142 @cupom @CT-CUP-03 @CA03 @api @ui @auto (51ms)
+  ✓   69 [api] › .features-gen\api\features\cupom.feature.spec.js:94:9 › Cupom de desconto no carrinho › Cupom inexistente não gera desconto › Exemplo 3 @VZS-142 @cupom @CT-CUP-03 @CA03 @api @ui @auto (101ms)
+  ✓   70 [api] › .features-gen\api\features\cupom.feature.spec.js:104:9 › Cupom de desconto no carrinho › Cupom inexistente não gera desconto › Exemplo 4 @VZS-142 @cupom @CT-CUP-03 @CA03 @api @ui @auto (65ms)
+  ✓   71 [api] › .features-gen\api\features\cupom.feature.spec.js:118:9 › Cupom de desconto no carrinho › Cupom expirado não gera desconto › Exemplo 1 @VZS-142 @cupom @CT-CUP-04 @CA04 @api @ui @auto (59ms)
+  ✓   73 [api] › .features-gen\api\features\cupom.feature.spec.js:128:9 › Cupom de desconto no carrinho › Cupom expirado não gera desconto › Exemplo 2 @VZS-142 @cupom @CT-CUP-04 @CA04 @api @ui @auto (37ms)
+  ✓   74 [api] › .features-gen\api\features\cupom.feature.spec.js:138:9 › Cupom de desconto no carrinho › Cupom expirado não gera desconto › Exemplo 3 @VZS-142 @cupom @CT-CUP-04 @CA04 @api @ui @auto (44ms)
+  ✘   72 [api] › .features-gen\api\features\frete.feature.spec.js:30:11 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal exatamente igual a R$ 200,00 tem frete grátis (limite inclusivo) › Exemplo 2 @VZS-142 @frete @CT-FRE-02 @CA06 @api @ui @auto (115ms)
+  ✓   75 [api] › .features-gen\api\features\pedido.feature.spec.js:6:7 › Confirmação do pedido › Pedido válido com cupom é criado com número no formato VZ-000000 @VZS-142 @pedido @CT-PED-01 @api @auto (92ms)
+  ✓   76 [api] › .features-gen\api\features\pedido.feature.spec.js:21:7 › Confirmação do pedido › Pedido válido sem cupom e com frete grátis @VZS-142 @pedido @CT-PED-01 @api @auto (55ms)
+  ✓   77 [api] › .features-gen\api\features\pedido.feature.spec.js:35:9 › Confirmação do pedido › Os totais do pedido são iguais aos do cálculo do carrinho (com cupom) › Exemplo 1 @VZS-142 @pedido @CT-PED-02 @api @auto (100ms)
+  ✓   78 [api] › .features-gen\api\features\pedido.feature.spec.js:42:9 › Confirmação do pedido › Os totais do pedido são iguais aos do cálculo do carrinho (com cupom) › Exemplo 2 @VZS-142 @pedido @CT-PED-02 @api @auto (61ms)
+  ✓   79 [api] › .features-gen\api\features\pedido.feature.spec.js:51:7 › Confirmação do pedido › Os totais do pedido são iguais aos do cálculo do carrinho (sem cupom) @VZS-142 @pedido @CT-PED-02 @api @auto (60ms)
+  ✓   80 [api] › .features-gen\api\features\pedido.feature.spec.js:58:7 › Confirmação do pedido › Cupom em minúsculas e com espaços também é aceito no pedido @VZS-142 @pedido @CT-PED-02 @CA02 @api @auto (58ms)
+  ✓   82 [api] › .features-gen\api\features\pedido.feature.spec.js:68:9 › Confirmação do pedido › O nome precisa ter nome e sobrenome › Exemplo 1 @VZS-142 @pedido @CT-PED-03 @api @ui @auto (50ms)
+  ✓   81 [api] › .features-gen\api\features\frete.feature.spec.js:44:11 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal logo abaixo do limite ainda cobra frete › Exemplo 1 @VZS-142 @frete @CT-FRE-03 @CA06 @CA07 @api @ui @auto (88ms)
+  ✓   83 [api] › .features-gen\api\features\pedido.feature.spec.js:74:9 › Confirmação do pedido › O nome precisa ter nome e sobrenome › Exemplo 2 @VZS-142 @pedido @CT-PED-03 @api @ui @auto (41ms)
+  ✓   84 [api] › .features-gen\api\features\frete.feature.spec.js:54:11 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal logo abaixo do limite ainda cobra frete › Exemplo 2 @VZS-142 @frete @CT-FRE-03 @CA06 @CA07 @api @ui @auto (48ms)
+  ✓   85 [api] › .features-gen\api\features\pedido.feature.spec.js:84:9 › Confirmação do pedido › O e-mail precisa ter formato válido › Exemplo 1 @VZS-142 @pedido @CT-PED-04 @api @ui @auto (42ms)
+  ✓   86 [api] › .features-gen\api\features\frete.feature.spec.js:66:9 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal acima de R$ 200,00 tem frete grátis e faltante zero @VZS-142 @frete @CT-FRE-04 @CA06 @api @ui @auto (54ms)
+  ✓   87 [api] › .features-gen\api\features\pedido.feature.spec.js:90:9 › Confirmação do pedido › O e-mail precisa ter formato válido › Exemplo 2 @VZS-142 @pedido @CT-PED-04 @api @ui @auto (37ms)
+  ✓   89 [api] › .features-gen\api\features\pedido.feature.spec.js:96:9 › Confirmação do pedido › O e-mail precisa ter formato válido › Exemplo 3 @VZS-142 @pedido @CT-PED-04 @api @ui @auto (48ms)
+  ✓   88 [api] › .features-gen\api\features\frete.feature.spec.js:75:9 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › O valor faltante nunca é negativo @VZS-142 @frete @CT-FRE-07 @api @auto (72ms)
+  ✓   90 [api] › .features-gen\api\features\pedido.feature.spec.js:102:9 › Confirmação do pedido › O e-mail precisa ter formato válido › Exemplo 4 @VZS-142 @pedido @CT-PED-04 @api @ui @auto (52ms)
+  ✘   91 [api] › .features-gen\api\features\frete.feature.spec.js:87:11 › Frete grátis e frete fixo › O frete grátis considera o subtotal ANTES do desconto, e o desconto não incide sobre o frete › O cupom não faz o cliente perder o frete grátis › Exemplo 1 @VZS-142 @frete @CT-FRE-05 @CA08 @api @ui @auto (57ms)
+  ✓   92 [api] › .features-gen\api\features\pedido.feature.spec.js:108:9 › Confirmação do pedido › O e-mail precisa ter formato válido › Exemplo 5 @VZS-142 @pedido @CT-PED-04 @api @ui @auto (42ms)
+  ✓   93 [api] › .features-gen\api\features\pedido.feature.spec.js:114:9 › Confirmação do pedido › O e-mail precisa ter formato válido › Exemplo 6 @VZS-142 @pedido @CT-PED-04 @api @ui @auto (37ms)
+  ✓   94 [api] › .features-gen\api\features\pedido.feature.spec.js:124:9 › Confirmação do pedido › CEP com 8 dígitos é aceito com ou sem hífen › Exemplo 1 @VZS-142 @pedido @CT-PED-05 @api @ui @auto (37ms)
+  ✓   95 [api] › .features-gen\api\features\pedido.feature.spec.js:131:9 › Confirmação do pedido › CEP com 8 dígitos é aceito com ou sem hífen › Exemplo 2 @VZS-142 @pedido @CT-PED-05 @api @ui @auto (77ms)
+  ✓   96 [api] › .features-gen\api\features\pedido.feature.spec.js:142:9 › Confirmação do pedido › CEP inválido é recusado › Exemplo 1 @VZS-142 @pedido @CT-PED-06 @api @ui @auto (54ms)
+  ✓   97 [api] › .features-gen\api\features\pedido.feature.spec.js:148:9 › Confirmação do pedido › CEP inválido é recusado › Exemplo 2 @VZS-142 @pedido @CT-PED-06 @api @ui @auto (40ms)
+  ✓   98 [api] › .features-gen\api\features\pedido.feature.spec.js:154:9 › Confirmação do pedido › CEP inválido é recusado › Exemplo 3 @VZS-142 @pedido @CT-PED-06 @api @ui @auto (128ms)
+  ✓  100 [api] › .features-gen\api\features\pedido.feature.spec.js:160:9 › Confirmação do pedido › CEP inválido é recusado › Exemplo 4 @VZS-142 @pedido @CT-PED-06 @api @ui @auto (38ms)
+  ✓  101 [api] › .features-gen\api\features\pedido.feature.spec.js:166:9 › Confirmação do pedido › CEP inválido é recusado › Exemplo 5 @VZS-142 @pedido @CT-PED-06 @api @ui @auto (51ms)
+  ✓   99 [api] › .features-gen\api\features\frete.feature.spec.js:97:11 › Frete grátis e frete fixo › O frete grátis considera o subtotal ANTES do desconto, e o desconto não incide sobre o frete › O cupom não faz o cliente perder o frete grátis › Exemplo 2 @VZS-142 @frete @CT-FRE-05 @CA08 @api @ui @auto (86ms)
+  ✓  102 [api] › .features-gen\api\features\pedido.feature.spec.js:176:9 › Confirmação do pedido › No pedido, cupom inválido ou expirado é erro (diferente do cálculo, que responde 200) › Exemplo 1 @VZS-142 @pedido @CT-PED-07 @CT-PED-08 @CT-API-10 @api @auto (34ms)
+  ✓  103 [api] › .features-gen\api\features\frete.feature.spec.js:109:9 › Frete grátis e frete fixo › O frete grátis considera o subtotal ANTES do desconto, e o desconto não incide sobre o frete › O cupom não faz o cliente ganhar frete grátis @VZS-142 @frete @CT-FRE-05 @CA08 @api @ui @auto (66ms)
+  ✓  104 [api] › .features-gen\api\features\pedido.feature.spec.js:182:9 › Confirmação do pedido › No pedido, cupom inválido ou expirado é erro (diferente do cálculo, que responde 200) › Exemplo 2 @VZS-142 @pedido @CT-PED-07 @CT-PED-08 @CT-API-10 @api @auto (88ms)
+  ✓  105 [api] › .features-gen\api\features\frete.feature.spec.js:120:9 › Frete grátis e frete fixo › O frete grátis considera o subtotal ANTES do desconto, e o desconto não incide sobre o frete › O desconto incide só sobre os produtos, nunca sobre o frete @VZS-142 @frete @CT-FRE-06 @CA09 @api @ui @auto (48ms)
+  ✓  106 [api] › .features-gen\api\features\pedido.feature.spec.js:188:9 › Confirmação do pedido › No pedido, cupom inválido ou expirado é erro (diferente do cálculo, que responde 200) › Exemplo 3 @VZS-142 @pedido @CT-PED-07 @CT-PED-08 @CT-API-10 @api @auto (50ms)
+  ✓  107 [api] › .features-gen\api\features\quantidade.feature.spec.js:6:7 › Limite de 5 unidades por produto › 5 unidades do mesmo produto são aceitas @VZS-142 @quantidade @CT-QTD-01 @CA10 @api @ui @auto (43ms)
+  ✓  108 [api] › .features-gen\api\features\pedido.feature.spec.js:196:7 › Confirmação do pedido › Pedido sem itens é recusado @VZS-142 @pedido @CT-PED-09 @api @auto (36ms)
+  ✓  109 [api] › .features-gen\api\features\quantidade.feature.spec.js:15:7 › Limite de 5 unidades por produto › 5 unidades do mesmo produto com cupom @VZS-142 @quantidade @CT-QTD-01 @CA10 @api @ui @auto (53ms)
+  ✓  110 [api] › .features-gen\api\features\quantidade.feature.spec.js:24:7 › Limite de 5 unidades por produto › O limite é por produto, não pelo carrinho @VZS-142 @quantidade @CT-QTD-03 @CA10 @api @auto (55ms)
+  ✘  111 [api] › .features-gen\api\features\quantidade.feature.spec.js:36:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 1 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto (47ms)
+  ✘  112 [api] › .features-gen\api\features\quantidade.feature.spec.js:42:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 2 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto (95ms)
+  ✘  113 [api] › .features-gen\api\features\quantidade.feature.spec.js:48:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 3 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto (100ms)
+  ✘  114 [api] › .features-gen\api\features\quantidade.feature.spec.js:56:7 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades ao confirmar o pedido @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto (100ms)
+  ✘  115 [api] › .features-gen\api\features\quantidade.feature.spec.js:62:7 › Limite de 5 unidades por produto › Basta um item acima do limite para rejeitar o carrinho todo @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto (77ms)
+  ✓  116 [api] › .features-gen\api\features\quantidade.feature.spec.js:70:9 › Limite de 5 unidades por produto › A API rejeita quantidades que não são inteiros maiores ou iguais a 1 › Exemplo 1 @VZS-142 @quantidade @CT-QTD-06 @api @auto (75ms)
+  ✓  117 [api] › .features-gen\api\features\quantidade.feature.spec.js:76:9 › Limite de 5 unidades por produto › A API rejeita quantidades que não são inteiros maiores ou iguais a 1 › Exemplo 2 @VZS-142 @quantidade @CT-QTD-06 @api @auto (37ms)
+  ✓  118 [api] › .features-gen\api\features\quantidade.feature.spec.js:82:9 › Limite de 5 unidades por produto › A API rejeita quantidades que não são inteiros maiores ou iguais a 1 › Exemplo 3 @VZS-142 @quantidade @CT-QTD-06 @api @auto (51ms)
+  ✓  119 [api] › .features-gen\api\features\quantidade.feature.spec.js:90:7 › Limite de 5 unidades por produto › A API rejeita o mesmo produto repetido na lista @VZS-142 @quantidade @CT-QTD-07 @api @auto (86ms)
+
+
+  1) [api] › .features-gen\api\features\calculo.feature.spec.js:43:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 6 @VZS-142 @calculo @CT-CAL-01 @api @auto › E os valores respeitam as regras de cálculo 
+
+    Error: 2×P005: freteGratis (subtotal >= 200,00)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at support\api.ts:99
+
+       97 |   expect.soft(centavos(corpo.total), `${rotulo}: total = subtotal - desconto + frete`).toBe(centavos(corpo.subtotal) - centavos(corpo.desconto) + centavos(corpo.frete));
+       98 |   const gratis = centavos(corpo.subtotal) >= 20000;
+    >  99 |   expect.soft(corpo.freteGratis, `${rotulo}: freteGratis (subtotal >= 200,00)`).toBe(gratis);
+          |                                                                                 ^
+      100 |   expect.soft(centavos(corpo.frete), `${rotulo}: frete`).toBe(gratis ? 0 : 1990);
+      101 |   expect.soft(centavos(corpo.valorFaltanteFreteGratis), `${rotulo}: faltante = max(0, 200 - subtotal)`).toBe(Math.max(0, 20000 - centavos(corpo.subtotal)));
+      102 |   if (corpo.cupom?.aplicado) {
+        at expectInvariantes (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\support\api.ts:99:81)
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:151:20)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\calculo.feature.spec.js:47:7
+
+    Error: 2×P005: frete
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1990
+
+       at support\api.ts:100
+
+       98 |   const gratis = centavos(corpo.subtotal) >= 20000;
+       99 |   expect.soft(corpo.freteGratis, `${rotulo}: freteGratis (subtotal >= 200,00)`).toBe(gratis);
+    > 100 |   expect.soft(centavos(corpo.frete), `${rotulo}: frete`).toBe(gratis ? 0 : 1990);
+          |                                                          ^
+      101 |   expect.soft(centavos(corpo.valorFaltanteFreteGratis), `${rotulo}: faltante = max(0, 200 - subtotal)`).toBe(Math.max(0, 20000 - centavos(corpo.subtotal)));
+      102 |   if (corpo.cupom?.aplicado) {
+      103 |     expect.soft(centavos(corpo.desconto), `${rotulo}: desconto = 10% do subtotal`).toBe(Math.round(centavos(corpo.subtotal) / 10));
+        at expectInvariantes (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\support\api.ts:100:58)
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:151:20)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\calculo.feature.spec.js:47:7
+
+    Error Context: test-results\features-calculo.feature-C-2a5d0-arrinho-sem-cupom-Exemplo-6-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-calculo.feature-C-2a5d0-arrinho-sem-cupom-Exemplo-6-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-calculo.feature-C-2a5d0-arrinho-sem-cupom-Exemplo-6-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [api] › .features-gen\api\features\calculo.feature.spec.js:103:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 6 @VZS-142 @calculo @CT-CAL-01 @api @auto › E os valores respeitam as regras de cálculo 
+
+    Error: 2×P005: freteGratis (subtotal >= 200,00)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at support\api.ts:99
+
+       97 |   expect.soft(centavos(corpo.total), `${rotulo}: total = subtotal - desconto + frete`).toBe(centavos(corpo.subtotal) - centavos(corpo.desconto) + centavos(corpo.frete));
+       98 |   const gratis = centavos(corpo.subtotal) >= 20000;
+    >  99 |   expect.soft(corpo.freteGratis, `${rotulo}: freteGratis (subtotal >= 200,00)`).toBe(gratis);
+          |                                                                                 ^
+      100 |   expect.soft(centavos(corpo.frete), `${rotulo}: frete`).toBe(gratis ? 0 : 1990);
+      101 |   expect.soft(centavos(corpo.valorFaltanteFreteGratis), `${rotulo}: faltante = max(0, 200 - subtotal)`).toBe(Math.max(0, 20000 - centavos(corpo.subtotal)));
+      102 |   if (corpo.cupom?.aplicado) {
+        at expectInvariantes (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\support\api.ts:99:81)
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:151:20)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\calculo.feature.spec.js:107:7
+
+    Error: 2×P005: frete
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1990
+
+       at support\api.ts:100
+
+       98 |   const gratis = centavos(corpo.subtotal) >= 20000;
+       99 |   expect.soft(corpo.freteGratis, `${rotulo}: freteGratis (subtotal >= 200,00)`).toBe(gratis);
+    > 100 |   expect.soft(centavos(corpo.frete), `${rotulo}: frete`).toBe(gratis ? 0 : 1990);
+          |                                                          ^
+      101 |   expect.soft(centavos(corpo.valorFaltanteFreteGratis), `${rotulo}: faltante = max(0, 200 - subtotal)`).toBe(Math.max(0, 20000 - centavos(corpo.subtotal)));
+      102 |   if (corpo.cupom?.aplicado) {
+      103 |     expect.soft(centavos(corpo.desconto), `${rotulo}: desconto = 10% do subtotal`).toBe(Math.round(centavos(corpo.subtotal) / 10));
+        at expectInvariantes (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\support\api.ts:100:58)
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:151:20)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\calculo.feature.spec.js:107:7
+
+    Error Context: test-results\features-calculo.feature-C-62c14-arrinho-com-cupom-Exemplo-6-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-calculo.feature-C-62c14-arrinho-com-cupom-Exemplo-6-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-calculo.feature-C-62c14-arrinho-com-cupom-Exemplo-6-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [api] › .features-gen\api\features\frete.feature.spec.js:20:11 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal exatamente igual a R$ 200,00 tem frete grátis (limite inclusivo) › Exemplo 1 @VZS-142 @frete @CT-FRE-02 @CA06 @api @ui @auto › E o frete é R$ 0,00 
+
+    Error: frete (corpo recebido: {"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":2,"total":200}],"subtotal":200,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0,"total":219.9,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 19.9
+
+       at steps\api\api.steps.ts:130
+
+      128 |
+      129 | Then(/^o (subtotal|desconto|frete|total) é R\$ ([\d.]+,\d{2})$/, async ({ mundo }, campo: string, valor: string) => {
+    > 130 |   expect(mundo.corpo?.[campo], `${campo} (corpo recebido: ${mundo.texto})`).toBe(brl(valor));
+          |                                                                             ^
+      131 | });
+      132 |
+      133 | Then(/^o valor faltante para o frete grátis é R\$ ([\d.]+,\d{2})$/, async ({ mundo }, valor: string) => {
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:130:77)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\frete.feature.spec.js:24:9
+
+    Error Context: test-results\features-frete.feature-Fre-c7af5--limite-inclusivo-Exemplo-1-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-frete.feature-Fre-c7af5--limite-inclusivo-Exemplo-1-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-frete.feature-Fre-c7af5--limite-inclusivo-Exemplo-1-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [api] › .features-gen\api\features\frete.feature.spec.js:30:11 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal exatamente igual a R$ 200,00 tem frete grátis (limite inclusivo) › Exemplo 2 @VZS-142 @frete @CT-FRE-02 @CA06 @api @ui @auto › E o frete é R$ 0,00 
+
+    Error: frete (corpo recebido: {"itens":[{"produtoId":"P008","nome":"Garrafa Térmica 750ml","precoUnitario":50,"quantidade":4,"total":200}],"subtotal":200,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0,"total":219.9,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 19.9
+
+       at steps\api\api.steps.ts:130
+
+      128 |
+      129 | Then(/^o (subtotal|desconto|frete|total) é R\$ ([\d.]+,\d{2})$/, async ({ mundo }, campo: string, valor: string) => {
+    > 130 |   expect(mundo.corpo?.[campo], `${campo} (corpo recebido: ${mundo.texto})`).toBe(brl(valor));
+          |                                                                             ^
+      131 | });
+      132 |
+      133 | Then(/^o valor faltante para o frete grátis é R\$ ([\d.]+,\d{2})$/, async ({ mundo }, valor: string) => {
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:130:77)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\frete.feature.spec.js:34:9
+
+    Error Context: test-results\features-frete.feature-Fre-d23c0--limite-inclusivo-Exemplo-2-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-frete.feature-Fre-d23c0--limite-inclusivo-Exemplo-2-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-frete.feature-Fre-d23c0--limite-inclusivo-Exemplo-2-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [api] › .features-gen\api\features\frete.feature.spec.js:87:11 › Frete grátis e frete fixo › O frete grátis considera o subtotal ANTES do desconto, e o desconto não incide sobre o frete › O cupom não faz o cliente perder o frete grátis › Exemplo 1 @VZS-142 @frete @CT-FRE-05 @CA08 @api @ui @auto › E o frete é R$ 0,00 
+
+    Error: frete (corpo recebido: {"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":2,"total":200}],"subtotal":200,"desconto":20,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0,"total":199.9,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 19.9
+
+       at steps\api\api.steps.ts:130
+
+      128 |
+      129 | Then(/^o (subtotal|desconto|frete|total) é R\$ ([\d.]+,\d{2})$/, async ({ mundo }, campo: string, valor: string) => {
+    > 130 |   expect(mundo.corpo?.[campo], `${campo} (corpo recebido: ${mundo.texto})`).toBe(brl(valor));
+          |                                                                             ^
+      131 | });
+      132 |
+      133 | Then(/^o valor faltante para o frete grátis é R\$ ([\d.]+,\d{2})$/, async ({ mundo }, valor: string) => {
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:130:77)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\frete.feature.spec.js:92:9
+
+    Error Context: test-results\features-frete.feature-Fre-bfe6f-er-o-frete-grátis-Exemplo-1-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-frete.feature-Fre-bfe6f-er-o-frete-grátis-Exemplo-1-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-frete.feature-Fre-bfe6f-er-o-frete-grátis-Exemplo-1-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [api] › .features-gen\api\features\quantidade.feature.spec.js:36:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 1 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto › Então a resposta é 422 com o código "QUANTIDADE_MAXIMA_EXCEDIDA" 
+
+    Error: status HTTP (corpo recebido: {"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":6,"total":359.4}],"subtotal":359.4,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":359.4,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 200
+
+       at steps\api\api.steps.ts:115
+
+      113 |
+      114 | Then(/^a resposta é (\d{3}) com o código "([A-Z_]+)"$/, async ({ mundo }, status: string, codigo: string) => {
+    > 115 |   expect(mundo.status, `status HTTP (corpo recebido: ${mundo.texto})`).toBe(Number(status));
+          |                                                                        ^
+      116 |   expect(mundo.corpo?.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      117 |   expect(mundo.corpo?.erro.codigo).toBe(codigo);
+      118 |   expect(typeof mundo.corpo?.erro.mensagem, 'erro.mensagem deve ser texto').toBe('string');
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:115:72)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\quantidade.feature.spec.js:39:7
+
+    Error Context: test-results\features-quantidade.featur-59416-idades-no-cálculo-Exemplo-1-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-quantidade.featur-59416-idades-no-cálculo-Exemplo-1-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-quantidade.featur-59416-idades-no-cálculo-Exemplo-1-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [api] › .features-gen\api\features\quantidade.feature.spec.js:42:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 2 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto › Então a resposta é 422 com o código "QUANTIDADE_MAXIMA_EXCEDIDA" 
+
+    Error: status HTTP (corpo recebido: {"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":10,"total":599}],"subtotal":599,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":599,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 200
+
+       at steps\api\api.steps.ts:115
+
+      113 |
+      114 | Then(/^a resposta é (\d{3}) com o código "([A-Z_]+)"$/, async ({ mundo }, status: string, codigo: string) => {
+    > 115 |   expect(mundo.status, `status HTTP (corpo recebido: ${mundo.texto})`).toBe(Number(status));
+          |                                                                        ^
+      116 |   expect(mundo.corpo?.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      117 |   expect(mundo.corpo?.erro.codigo).toBe(codigo);
+      118 |   expect(typeof mundo.corpo?.erro.mensagem, 'erro.mensagem deve ser texto').toBe('string');
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:115:72)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\quantidade.feature.spec.js:45:7
+
+    Error Context: test-results\features-quantidade.featur-4b154-idades-no-cálculo-Exemplo-2-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-quantidade.featur-4b154-idades-no-cálculo-Exemplo-2-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-quantidade.featur-4b154-idades-no-cálculo-Exemplo-2-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [api] › .features-gen\api\features\quantidade.feature.spec.js:48:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 3 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto › Então a resposta é 422 com o código "QUANTIDADE_MAXIMA_EXCEDIDA" 
+
+    Error: status HTTP (corpo recebido: {"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":100,"total":5990}],"subtotal":5990,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":5990,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 200
+
+       at steps\api\api.steps.ts:115
+
+      113 |
+      114 | Then(/^a resposta é (\d{3}) com o código "([A-Z_]+)"$/, async ({ mundo }, status: string, codigo: string) => {
+    > 115 |   expect(mundo.status, `status HTTP (corpo recebido: ${mundo.texto})`).toBe(Number(status));
+          |                                                                        ^
+      116 |   expect(mundo.corpo?.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      117 |   expect(mundo.corpo?.erro.codigo).toBe(codigo);
+      118 |   expect(typeof mundo.corpo?.erro.mensagem, 'erro.mensagem deve ser texto').toBe('string');
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:115:72)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\quantidade.feature.spec.js:51:7
+
+    Error Context: test-results\features-quantidade.featur-daebe-idades-no-cálculo-Exemplo-3-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-quantidade.featur-daebe-idades-no-cálculo-Exemplo-3-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-quantidade.featur-daebe-idades-no-cálculo-Exemplo-3-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [api] › .features-gen\api\features\quantidade.feature.spec.js:56:7 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades ao confirmar o pedido @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto › Então a resposta é 422 com o código "QUANTIDADE_MAXIMA_EXCEDIDA" 
+
+    Error: status HTTP (corpo recebido: {"numero":"VZ-974369","criadoEm":"2026-10-09T20:11:50.392Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":6,"total":359.4}],"subtotal":359.4,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":359.4,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 201
+
+       at steps\api\api.steps.ts:115
+
+      113 |
+      114 | Then(/^a resposta é (\d{3}) com o código "([A-Z_]+)"$/, async ({ mundo }, status: string, codigo: string) => {
+    > 115 |   expect(mundo.status, `status HTTP (corpo recebido: ${mundo.texto})`).toBe(Number(status));
+          |                                                                        ^
+      116 |   expect(mundo.corpo?.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      117 |   expect(mundo.corpo?.erro.codigo).toBe(codigo);
+      118 |   expect(typeof mundo.corpo?.erro.mensagem, 'erro.mensagem deve ser texto').toBe('string');
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:115:72)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\quantidade.feature.spec.js:59:5
+
+    Error Context: test-results\features-quantidade.featur-1bcc4-dades-ao-confirmar-o-pedido-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-quantidade.featur-1bcc4-dades-ao-confirmar-o-pedido-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-quantidade.featur-1bcc4-dades-ao-confirmar-o-pedido-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [api] › .features-gen\api\features\quantidade.feature.spec.js:62:7 › Limite de 5 unidades por produto › Basta um item acima do limite para rejeitar o carrinho todo @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto › Então a resposta é 422 com o código "QUANTIDADE_MAXIMA_EXCEDIDA" 
+
+    Error: status HTTP (corpo recebido: {"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":1,"total":59.9},{"produtoId":"P002","nome":"Calça Jeans Slim","precoUnitario":139.9,"quantidade":6,"total":839.4}],"subtotal":899.3,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":899.3,"cupom":null})
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 422
+    Received: 200
+
+       at steps\api\api.steps.ts:115
+
+      113 |
+      114 | Then(/^a resposta é (\d{3}) com o código "([A-Z_]+)"$/, async ({ mundo }, status: string, codigo: string) => {
+    > 115 |   expect(mundo.status, `status HTTP (corpo recebido: ${mundo.texto})`).toBe(Number(status));
+          |                                                                        ^
+      116 |   expect(mundo.corpo?.erro, 'o corpo de erro deve ter a chave "erro"').toBeDefined();
+      117 |   expect(mundo.corpo?.erro.codigo).toBe(codigo);
+      118 |   expect(typeof mundo.corpo?.erro.mensagem, 'erro.mensagem deve ser texto').toBe('string');
+        at Object.<anonymous> (C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\steps\api\api.steps.ts:115:72)
+        at C:\Users\thigi\OneDrive\Documentos\TG_Projects\verzel-qa-vzs-142\.features-gen\api\features\quantidade.feature.spec.js:65:5
+
+    Error Context: test-results\features-quantidade.featur-1f8ca-ra-rejeitar-o-carrinho-todo-api\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\features-quantidade.featur-1f8ca-ra-rejeitar-o-carrinho-todo-api\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\features-quantidade.featur-1f8ca-ra-rejeitar-o-carrinho-todo-api\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10 failed
+    [api] › .features-gen\api\features\calculo.feature.spec.js:43:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (sem cupom) › Exemplo 6 @VZS-142 @calculo @CT-CAL-01 @api @auto 
+    [api] › .features-gen\api\features\calculo.feature.spec.js:103:9 › Cálculo do carrinho › A fórmula do total e as regras de frete valem para qualquer carrinho (com cupom) › Exemplo 6 @VZS-142 @calculo @CT-CAL-01 @api @auto 
+    [api] › .features-gen\api\features\frete.feature.spec.js:20:11 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal exatamente igual a R$ 200,00 tem frete grátis (limite inclusivo) › Exemplo 1 @VZS-142 @frete @CT-FRE-02 @CA06 @api @ui @auto 
+    [api] › .features-gen\api\features\frete.feature.spec.js:30:11 › Frete grátis e frete fixo › Frete grátis a partir de R$ 200,00 (inclusive); abaixo disso, frete fixo de R$ 19,90 › Subtotal exatamente igual a R$ 200,00 tem frete grátis (limite inclusivo) › Exemplo 2 @VZS-142 @frete @CT-FRE-02 @CA06 @api @ui @auto 
+    [api] › .features-gen\api\features\frete.feature.spec.js:87:11 › Frete grátis e frete fixo › O frete grátis considera o subtotal ANTES do desconto, e o desconto não incide sobre o frete › O cupom não faz o cliente perder o frete grátis › Exemplo 1 @VZS-142 @frete @CT-FRE-05 @CA08 @api @ui @auto 
+    [api] › .features-gen\api\features\quantidade.feature.spec.js:36:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 1 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto 
+    [api] › .features-gen\api\features\quantidade.feature.spec.js:42:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 2 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto 
+    [api] › .features-gen\api\features\quantidade.feature.spec.js:48:9 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades no cálculo › Exemplo 3 @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto 
+    [api] › .features-gen\api\features\quantidade.feature.spec.js:56:7 › Limite de 5 unidades por produto › A API rejeita mais de 5 unidades ao confirmar o pedido @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto 
+    [api] › .features-gen\api\features\quantidade.feature.spec.js:62:7 › Limite de 5 unidades por produto › Basta um item acima do limite para rejeitar o carrinho todo @VZS-142 @quantidade @CT-QTD-05 @CA10 @api @auto 
+  109 passed (8.7s)
+
+To open last HTML report run:
+
+  npx playwright show-report
+
