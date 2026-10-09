@@ -6,8 +6,9 @@ Funcionalidade: Cupom de desconto no carrinho
   Para pagar menos nas minhas compras
 
   # Legenda de tags: @CT-xxx = ID do cenário | @CAxx = critério de aceite
-  #                  @api / @ui = camada | @auto = automatizado (Playwright, camada de API) | @manual = execução manual
-  #                  @rascunho-auto = automação de UI em rascunho (tests/e2e)
+  #                  @api / @ui = camada verificada | @manual = execução manual
+  #                  @auto = automatizado com Playwright BDD (camada de API)
+  #                  @rascunho-auto = automação de UI em rascunho (features/ui.feature)
   Contexto:
     Dado que o carrinho está vazio
 
@@ -15,17 +16,22 @@ Funcionalidade: Cupom de desconto no carrinho
   Cenário: BEMVINDO10 aplica 10% de desconto sobre o subtotal dos produtos
     Dado que o carrinho contém 1 unidade de "Calça Jeans Slim" e 2 unidades de "Boné Aba Curva"
     Quando eu aplico o cupom "BEMVINDO10"
-    Então a mensagem exibida é "Cupom aplicado: 10% de desconto nos produtos."
+    Então a resposta é 200
+    E o cupom está aplicado
+    E a mensagem do cupom é "Cupom aplicado: 10% de desconto nos produtos."
     E o subtotal é R$ 239,70
     E o desconto é R$ 23,97
     E o frete é R$ 0,00
+    E o frete grátis está ativo
     E o total é R$ 215,73
 
   @CT-CUP-02 @CA02 @api @ui @auto
   Esquema do Cenário: O código do cupom ignora maiúsculas/minúsculas e espaços nas pontas
     Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
     Quando eu aplico o cupom <codigo>
-    Então o desconto é R$ 10,00
+    Então a resposta é 200
+    E o cupom está aplicado
+    E o desconto é R$ 10,00
     E o total é R$ 109,90
 
     Exemplos: (as aspas delimitam o texto digitado, incluindo os espaços)
@@ -40,7 +46,9 @@ Funcionalidade: Cupom de desconto no carrinho
   Esquema do Cenário: Cupom inexistente não gera desconto
     Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
     Quando eu aplico o cupom <codigo>
-    Então a mensagem exibida é "Cupom inválido."
+    Então a resposta é 200
+    E o cupom não está aplicado
+    E a mensagem do cupom é "Cupom inválido."
     E o desconto é R$ 0,00
     E o total é R$ 119,90
 
@@ -55,7 +63,9 @@ Funcionalidade: Cupom de desconto no carrinho
   Esquema do Cenário: Cupom expirado não gera desconto
     Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
     Quando eu aplico o cupom <codigo>
-    Então a mensagem exibida é "Cupom expirado."
+    Então a resposta é 200
+    E o cupom não está aplicado
+    E a mensagem do cupom é "Cupom expirado."
     E o desconto é R$ 0,00
     E o total é R$ 119,90
 
@@ -66,14 +76,13 @@ Funcionalidade: Cupom de desconto no carrinho
       | " VERAO2026 "  |
 
   @CT-CUP-05 @CA05 @ui @manual
-  Cenário: Reaplicar o mesmo cupom não acumula desconto
-    # Só existe um cupom válido (BEMVINDO10), então "dois cupons válidos" não é testável;
-    # o que se observa é que o desconto não dobra. Ver AMB-01.
+  Cenário: Com um cupom aplicado não é possível aplicar outro
+    # Só existe um cupom válido (BEMVINDO10); na tela, o campo de cupom é substituído pelo aviso de cupom aplicado.
     Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
     E o cupom "BEMVINDO10" está aplicado
-    Quando eu tento aplicar o cupom "BEMVINDO10" novamente
-    Então o desconto continua sendo R$ 10,00
-    E o resumo mostra um único cupom
+    Então o campo de cupom deixa de ser exibido
+    E a tela oferece a ação "Remover cupom"
+    E o desconto continua sendo R$ 10,00
 
   @CT-CUP-06 @CA05 @ui @manual
   Cenário: Para trocar de cupom, o cliente remove o atual e aplica outro
@@ -86,26 +95,19 @@ Funcionalidade: Cupom de desconto no carrinho
     Então a mensagem exibida é "Cupom expirado."
     E o desconto continua sendo R$ 0,00
 
-  @CT-CUP-07 @CA05 @CA03 @CA04 @ui @manual
-  Esquema do Cenário: Cupom inválido ou expirado digitado com um cupom válido já aplicado
-    # Interpretação (AMB-02): o cupom rejeitado não altera o cupom vigente.
+  @CT-CUP-07 @CA05 @CA03 @CA04 @ui @manual @nao-aplicavel
+  Cenário: Cupom inválido digitado com um cupom válido já aplicado
+    # Não executável pela interface: com cupom aplicado, o campo de digitação desaparece (ver CT-CUP-05).
     Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
     E o cupom "BEMVINDO10" está aplicado
-    Quando eu aplico o cupom "<codigo>"
-    Então a mensagem exibida é "<mensagem>"
-    E o desconto continua sendo R$ 10,00
-
-    Exemplos:
-      | codigo    | mensagem          |
-      | XPTO      | Cupom inválido.   |
-      | VERAO2026 | Cupom expirado.   |
+    Então não há campo para digitar outro cupom
 
   @CT-CUP-08 @CA02 @CA03 @ui @manual
   Esquema do Cenário: Campo de cupom vazio ou apenas com espaços
-    # Interpretação (AMB-03): nenhum desconto, sem erro técnico e sem quebrar o carrinho.
     Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
     Quando eu aplico o cupom <codigo>
-    Então nenhum desconto é aplicado
+    Então a mensagem exibida é "Informe um cupom."
+    E nenhum desconto é aplicado
     E a tela não exibe erro técnico
 
     Exemplos:
@@ -119,14 +121,14 @@ Funcionalidade: Cupom de desconto no carrinho
     E o cupom "BEMVINDO10" está aplicado
     Quando eu aumento a quantidade de "Mochila Urbana 20L" para 2
     Então o desconto passa a ser R$ 20,00
-    E o frete passa a ser R$ 0,00
-    E o total passa a ser R$ 180,00
-    Quando eu removo "Mochila Urbana 20L" do carrinho
-    Então o desconto é R$ 0,00
+    Quando eu reduzo a quantidade de "Mochila Urbana 20L" para 1
+    Então o desconto volta a ser R$ 10,00
+    E o total volta a ser R$ 109,90
 
   @CT-CUP-10 @CA05 @ui @manual
-  Cenário: Remover o cupom limpa a mensagem e o desconto do resumo
+  Cenário: Remover o cupom limpa o desconto e a mensagem do resumo
     Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
     E o cupom "BEMVINDO10" está aplicado
     Quando eu removo o cupom atual
-    Então o resumo não exibe mais linha de desconto nem a mensagem do cupom
+    Então o desconto volta a ser R$ 0,00
+    E o campo de cupom volta a ser exibido

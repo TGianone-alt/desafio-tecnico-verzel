@@ -2,11 +2,12 @@
   "name": "verzel-store-qa-vzs-142",
   "version": "1.0.0",
   "private": true,
-  "description": "Teste técnico QA Júnior (Verzel) - card VZS-142: cupom de desconto e frete grátis",
+  "description": "Teste técnico QA Júnior (Verzel) - card VZS-142: BDD/Gherkin executado com Playwright",
   "scripts": {
-    "test": "playwright test --project=api",
-    "test:ui": "playwright test --project=ui",
-    "test:all": "playwright test",
+    "bddgen": "bddgen",
+    "test": "bddgen && playwright test --project=api",
+    "test:ui": "bddgen && playwright test --project=ui",
+    "test:all": "bddgen && playwright test",
     "report": "playwright show-report",
     "codegen": "playwright codegen https://verzel-store.qa-test-verzel-store.workers.dev/",
     "typecheck": "tsc --noEmit"
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "@types/node": "^26.6.4",
+    "playwright-bdd": "^9.2.1",
     "typescript": "^7.0.2"
   }
 }

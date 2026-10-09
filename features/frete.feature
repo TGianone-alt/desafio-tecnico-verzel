@@ -13,6 +13,7 @@ Funcionalidade: Frete grátis e frete fixo
       Quando eu calculo o carrinho sem cupom
       Então o subtotal é R$ 100,00
       E o frete é R$ 19,90
+      E o frete grátis está inativo
       E o valor faltante para o frete grátis é R$ 100,00
       E o total é R$ 119,90
 
@@ -22,13 +23,14 @@ Funcionalidade: Frete grátis e frete fixo
       Quando eu calculo o carrinho sem cupom
       Então o subtotal é R$ 200,00
       E o frete é R$ 0,00
+      E o frete grátis está ativo
       E o valor faltante para o frete grátis é R$ 0,00
       E o total é R$ 200,00
 
       Exemplos:
-        | itens                       |
-        | 2 unidades de "Mochila Urbana 20L"       |
-        | 4 unidades de "Garrafa Térmica 750ml"    |
+        | itens                                   |
+        | 2 unidades de "Mochila Urbana 20L"      |
+        | 4 unidades de "Garrafa Térmica 750ml"   |
 
     @CT-FRE-03 @CA06 @CA07 @api @ui @auto
     Esquema do Cenário: Subtotal logo abaixo do limite ainda cobra frete
@@ -36,6 +38,7 @@ Funcionalidade: Frete grátis e frete fixo
       Quando eu calculo o carrinho sem cupom
       Então o subtotal é <subtotal>
       E o frete é R$ 19,90
+      E o frete grátis está inativo
       E o valor faltante para o frete grátis é <faltante>
       E o total é <total>
 
@@ -49,6 +52,7 @@ Funcionalidade: Frete grátis e frete fixo
       Dado que o carrinho contém 1 unidade de "Jaqueta Corta-Vento"
       Quando eu calculo o carrinho sem cupom
       Então o frete é R$ 0,00
+      E o frete grátis está ativo
       E o valor faltante para o frete grátis é R$ 0,00
       E o total é R$ 229,90
 
@@ -63,7 +67,7 @@ Funcionalidade: Frete grátis e frete fixo
       Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
       Então o carrinho informa que faltam R$ 100,00 para o frete grátis
       Quando eu adiciono mais 1 unidade de "Mochila Urbana 20L"
-      Então o carrinho informa frete grátis e não exibe mais o faltante
+      Então o carrinho informa que faltam R$ 0,00 e o frete grátis deveria estar ativo (BUG-001)
       Quando eu removo 1 unidade de "Mochila Urbana 20L"
       Então o carrinho volta a informar que faltam R$ 100,00
 
@@ -76,12 +80,13 @@ Funcionalidade: Frete grátis e frete fixo
       Então o subtotal é <subtotal>
       E o desconto é <desconto>
       E o frete é R$ 0,00
+      E o frete grátis está ativo
       E o total é <total>
 
       Exemplos: (o total pode ficar abaixo de R$ 200,00 e ainda assim o frete é grátis)
-        | itens                                                        | subtotal  | desconto | total     |
-        | 2 unidades de "Mochila Urbana 20L"                           | R$ 200,00 | R$ 20,00 | R$ 180,00 |
-        | 1 "Tênis Casual Urbano" e 1 "Kit 3 Pares de Meias"           | R$ 219,80 | R$ 21,98 | R$ 197,82 |
+        | itens                                                | subtotal  | desconto | total     |
+        | 2 unidades de "Mochila Urbana 20L"                   | R$ 200,00 | R$ 20,00 | R$ 180,00 |
+        | 1 "Tênis Casual Urbano" e 1 "Kit 3 Pares de Meias"   | R$ 219,80 | R$ 21,98 | R$ 197,82 |
 
     @CT-FRE-05 @CA08 @api @ui @auto
     Cenário: O cupom não faz o cliente ganhar frete grátis
@@ -90,6 +95,7 @@ Funcionalidade: Frete grátis e frete fixo
       Então o subtotal é R$ 199,90
       E o desconto é R$ 19,99
       E o frete é R$ 19,90
+      E o frete grátis está inativo
       E o valor faltante para o frete grátis é R$ 0,10
       E o total é R$ 199,81
 

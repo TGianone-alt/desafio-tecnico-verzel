@@ -9,19 +9,35 @@ Funcionalidade: Contrato da API (catálogo, rotas e erros)
     E cada produto tem id, nome, descricao, categoria e preco conforme a tabela da documentação
 
   @CT-API-02 @api @auto
-  Esquema do Cenário: Consultar produto por id
+  Esquema do Cenário: Consultar produto por id existente
     Quando eu envio GET /api/produtos/<id>
-    Então a resposta é <status>
+    Então a resposta é 200
+    E o produto retornado é "<nome>" com preço R$ <preco>
 
     Exemplos:
-      | id   | status                                |
-      | P001 | 200 com o produto                     |
-      | P008 | 200 com o produto                     |
-      | P999 | 404 com o código PRODUTO_NAO_ENCONTRADO |
+      | id   | nome                     | preco   |
+      | P001 | Camiseta Essencial       | 59,90   |
+      | P002 | Calça Jeans Slim         | 139,90  |
+      | P003 | Tênis Casual Urbano      | 189,90  |
+      | P004 | Boné Aba Curva           | 49,90   |
+      | P005 | Mochila Urbana 20L       | 100,00  |
+      | P006 | Kit 3 Pares de Meias     | 29,90   |
+      | P007 | Jaqueta Corta-Vento      | 229,90  |
+      | P008 | Garrafa Térmica 750ml    | 50,00   |
+
+  @CT-API-02 @api @auto
+  Cenário: Consultar produto inexistente
+    Quando eu envio GET /api/produtos/P999
+    Então a resposta é 404 com o código "PRODUTO_NAO_ENCONTRADO"
 
   @CT-API-03 @api @auto
-  Cenário: Rota inexistente
+  Cenário: Rota inexistente com GET
     Quando eu envio GET /api/rota-que-nao-existe
+    Então a resposta é 404 com o código "ROTA_NAO_ENCONTRADA"
+
+  @CT-API-03 @api @auto
+  Cenário: Rota inexistente com POST
+    Quando eu envio POST /api/carrinho/inexistente com o corpo {}
     Então a resposta é 404 com o código "ROTA_NAO_ENCONTRADA"
 
   @CT-API-04 @api @auto
@@ -38,17 +54,34 @@ Funcionalidade: Contrato da API (catálogo, rotas e erros)
       | POST   | /api/produtos          |
 
   @CT-API-05 @api @auto
-  Esquema do Cenário: Corpo que não é um objeto JSON válido
-    Quando eu envio POST /api/carrinho/calcular com o corpo <corpo>
+  Esquema do Cenário: JSON malformado
+    Quando eu envio POST <rota> com o corpo <corpo>
     Então a resposta é 400 com o código "JSON_INVALIDO"
 
     Exemplos:
-      | corpo        |
-      | {            |
-      | isto não é json |
-      | []           |
-      | null         |
-      | 123          |
+      | rota                   | corpo              |
+      | /api/carrinho/calcular | {                  |
+      | /api/carrinho/calcular | {"itens": [        |
+      | /api/carrinho/calcular | isto não é json    |
+      | /api/pedidos           | {                  |
+      | /api/pedidos           | {"itens": [        |
+      | /api/pedidos           | isto não é json    |
+
+  @CT-API-05 @api @auto
+  Esquema do Cenário: Corpo que não é um objeto JSON
+    Quando eu envio POST <rota> com o corpo <corpo>
+    Então a resposta é 400 com o código "JSON_INVALIDO"
+
+    Exemplos:
+      | rota                   | corpo   |
+      | /api/carrinho/calcular | []      |
+      | /api/carrinho/calcular | null    |
+      | /api/carrinho/calcular | 123     |
+      | /api/carrinho/calcular | "texto" |
+      | /api/pedidos           | []      |
+      | /api/pedidos           | null    |
+      | /api/pedidos           | 123     |
+      | /api/pedidos           | "texto" |
 
   @CT-API-06 @api @auto
   Esquema do Cenário: Lista de itens ausente ou vazia
@@ -61,24 +94,41 @@ Funcionalidade: Contrato da API (catálogo, rotas e erros)
       | {"itens": []}  |
 
   @CT-API-07 @api @auto
-  Cenário: Item que não é um objeto
-    Quando eu envio POST /api/carrinho/calcular com itens ["P001"]
+  Esquema do Cenário: Item que não é um objeto
+    Quando eu envio POST /api/carrinho/calcular com o corpo <corpo>
     Então a resposta é 422 com o código "ITEM_INVALIDO"
+
+    Exemplos:
+      | corpo               |
+      | {"itens": ["P001"]} |
+      | {"itens": [42]}     |
 
   @CT-API-08 @api @auto
   Cenário: Produto inexistente na lista de itens
-    Quando eu envio POST /api/carrinho/calcular com o produto "P999"
+    Dado que o carrinho contém 1 unidade de "P999"
+    Quando eu calculo o carrinho sem cupom
     Então a resposta é 422 com o código "PRODUTO_NAO_ENCONTRADO"
 
   @CT-API-09 @api @auto
-  Cenário: Formato padrão de erro
-    Quando eu envio POST /api/carrinho/calcular com quantidade 0 para o primeiro item
-    Então o corpo tem "erro.codigo" = "QUANTIDADE_INVALIDA"
-    E "erro.mensagem" = "A quantidade deve ser um número inteiro maior ou igual a 1."
-    E "erro.campo" = "itens[0].quantidade"
+  Cenário: Formato padrão de erro (exemplo da documentação)
+    Dado que o carrinho contém 0 unidades de "Camiseta Essencial"
+    Quando eu calculo o carrinho sem cupom
+    Então a resposta é 422 com o código "QUANTIDADE_INVALIDA"
+    E a mensagem de erro é "A quantidade deve ser um número inteiro maior ou igual a 1."
+    E o campo apontado é "itens[0].quantidade"
+
+  @CT-API-09 @api @auto
+  Cenário: O campo do erro aponta o índice correto do item
+    Dado que o carrinho contém 1 unidade de "Camiseta Essencial" e 0 unidades de "Calça Jeans Slim"
+    Quando eu calculo o carrinho sem cupom
+    Então a resposta é 422 com o código "QUANTIDADE_INVALIDA"
+    E o campo apontado é "itens[1].quantidade"
 
   @CT-API-10 @api @auto
   Cenário: Cálculo tolera cupom inválido (200); pedido não (422)
-    Quando eu calculo um carrinho com o cupom "XPTO"
-    Então a resposta é 200, sem desconto, com a mensagem "Cupom inválido."
+    Dado que o carrinho contém 1 unidade de "Mochila Urbana 20L"
+    Quando eu aplico o cupom "XPTO"
+    Então a resposta é 200
+    E o cupom não está aplicado
+    E a mensagem do cupom é "Cupom inválido."
     # contraparte em pedido.feature (CT-PED-07 e CT-PED-08)

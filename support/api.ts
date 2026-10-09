@@ -1,3 +1,6 @@
+/**
+ * Apoio para os passos BDD de API: dados da documentação, chamadas HTTP e verificações de cálculo.
+ */
 import { APIRequestContext, APIResponse, expect } from '@playwright/test';
 
 /** Dados fixos da documentação (seção "Dados para teste"). */

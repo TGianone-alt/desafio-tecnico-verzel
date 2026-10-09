@@ -38,4 +38,4 @@ POST /api/carrinho/calcular
 ```
 
 ## Observações
-(impacto para o cliente, workaround, teste automatizado relacionado — ex.: `tests/api/calculo.spec.ts` marcado com `test.fail()`)
+(impacto para o cliente, workaround, teste automatizado relacionado — ex.: cenário em `features/` que falha por causa do bug)
