@@ -1,9 +1,3 @@
-# Sessões de teste exploratório
-
-Quatro sessões com missão definida (charters do [docs/02](02-cenarios-e-rastreabilidade.md)), de cerca de 30 minutos cada. O objetivo não é seguir um roteiro, e sim investigar com curiosidade e registrar **o que foi feito, o que foi observado e o que ficou em dúvida**.
-
-**Como preencher:** cronometre cerca de 30 minutos por sessão. Enquanto explora, anote em poucas linhas. Se achar algo estranho, tire print (`EXP-0X_nn-descricao.png` em `docs/evidencias`) e confirme se é bug (abra `BUG-003.md`...) ou só observação. Apague as linhas de ideia que não usar.
-
 **Ambiente:** Google Chrome, Windows. Datas: 06 e 07/10/2026.
 
 ---
